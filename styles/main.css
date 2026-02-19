@@ -107,12 +107,13 @@ p {
 }
 
 .appointment-btn {
-    background: #000000;
+    background: #1f2937;
     color: #fff;
     border: none;
 }
 
 .learn-btn {
+    background: #fff;
     color: #000;
     border: 1px solid #d1d5db;
     border-radius: 4px;
