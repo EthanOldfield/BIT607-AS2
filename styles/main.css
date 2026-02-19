@@ -84,3 +84,44 @@ p {
     font-size: 19.2px;
     color: #6b7280;
 }
+
+.button-group {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+    flex-wrap: nowrap;
+}
+
+.button-group button {
+    padding: 16px 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    white-space: nowrap;
+    outline: none;
+    transition: all 0.15s ease-in-out;
+}
+
+.button-group button:focus {
+    outline: none;
+}
+
+.appointment-btn {
+    background: #000000;
+    color: #fff;
+    border: none;
+}
+
+.learn-btn {
+    color: #000;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+}
+
+.button-group button:hover {
+    opacity: 0.9;
+}
+
+section:last-child {
+    border-bottom: 1px solid #e5e7eb;
+}
