@@ -319,3 +319,55 @@ button.dark
 {
     flex-shrink: 0;
 }
+
+
+
+/* Mobile / small screens */
+@media (max-width: 768px) {
+    h1, h2, p
+    {
+        text-align: center;
+    }
+
+    h1
+    {
+        font-size: 2rem;
+    }
+
+    footer p
+    {
+        font-size: 0.8rem;
+    }
+
+    footer
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    section {
+        padding: 2rem; /* reduce padding on mobile */
+    }
+
+    .split > .card {
+        padding: 0.5rem; /* smaller card padding */
+    }
+
+    .status-container
+    {
+        align-self: center;
+    }
+
+    .button-group
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .button-group button
+    {
+        flex: none;
+    }
+}
