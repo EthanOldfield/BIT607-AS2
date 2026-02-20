@@ -189,13 +189,33 @@ button.dark
 {
     background: #e5e7eb;
     padding: 2rem;
-    border-radius: 4px;
+    border-radius: 8px;
 
     display: flex;
     flex-direction: column;
-    gap: 1rem;
 }
 .service-card .placeholder-image
 {
     width: 100%;
+    margin-bottom: 1.5rem;
+}
+.service-card ul
+{
+    list-style-position: outside;
+    padding-left: 1rem;
+    color: #6b7280; /* same as your p */
+}
+.service-card li
+{
+    margin-bottom: 0.3rem;
+}
+.service-card li::marker
+{
+    color: #6b7280;
+    font-size: 0.7em;
+}
+.service-card h4
+{
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
 }
