@@ -51,17 +51,26 @@ main
     flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: #ecf0f1;
+    background-color: #000000;
 }
 
 section
 {
-    display: flex;
-    flex-direction: row;
     padding: 4rem;
     background-color: #fff;
     border-bottom: 1px solid #e5e7eb;
-    gap: 1rem;
+}
+
+section.dark
+{
+    background-color: #f9fafb;
+}
+
+.section-inner
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 /* ---------------------- */
@@ -154,4 +163,31 @@ button.dark
 .button-group button:hover
 {
     opacity: 0.9;
+}
+
+/* ---------------------- */
+/*  Universal               */
+/* ---------------------- */
+.split
+{
+    display: flex;
+    gap: 1rem;
+}
+
+.center-text
+{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.card-grid
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+.service-card
+{
+    background: #e5e7eb;
+    padding: 2rem;
+    border-radius: 4px;
 }
