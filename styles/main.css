@@ -43,6 +43,12 @@ header
     border-bottom: 1px solid #e5e7eb;
 }
 
+.home-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
 footer
 {
     padding: 1.5rem;
@@ -152,7 +158,7 @@ header .button-group
     margin-top: 0;
 }
 
-.button-group button
+a.button
 {
     padding: 1rem 2rem;
     border-radius: 4px;
@@ -163,18 +169,26 @@ header .button-group
     background-color: #ffffff;
     color: black;
     border: 1px solid #d1d5db;
+
+    text-decoration: none;
 }
 
-button.dark
+a.button.dark
 {
     background-color: #1f2937;
     color: white;
     border: none;
 }
 
-.button-group button:hover
+a.button:hover
 {
+    background-color: #f7f4f4;
     opacity: 0.9;
+}
+
+a.button.dark:hover
+{
+    background-color: #1f2937;
 }
 
 /* ---------------------- */

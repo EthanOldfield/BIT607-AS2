@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <!-- Document Title + Icon -->
+    <title>Document</title>
+    <link rel="Icon" type="image/x-icon" href="/">
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <!-- Icon + Title -->
+        <h2 class="header-title">
+            <a href="index.html" class="home-link">
+                <span class="full-title">----- Snazzy Paws Grooming</span>
+                <span class="short-title">Snazzy Paws</span>
+            </a>
+        </h2>
+
+        <!-- Navigation Buttons -->
+        <div class="button-group desktop-nav">
+            <a href="gallery.html" class="button">Gallery</a>
+            <a href="services.html" class="button">View Services</a>
+            <a href="contact.html" class="button">Get Help</a>
+            <a  href="booking.html" class="button dark">Book Now</a>
+        </div>
+
+        <!-- Mobile dropdown button -->
+        <div class="mobile-nav">
+            <button id="mobile-menu-toggle">☰</button>
+            <div id="mobile-menu" class="mobile-menu hidden">
+                <button>Gallery</button>
+                <button>View Services</button>
+                <button>Get Help</button>
+                <button class="dark">Book Now</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Core Page Content -->
+    <main>
+        <!-- Welcome Section (introduction and initial image) -->
+        <section>
+            <div class="split">
+                <div class="card">
+                    <h1>Welcome to Snazzy Paws Grooming</h1>
+                    <P>A place where you can bring style to your pets. Here at Snazzy Paws we are dedicated to providing
+                        a comfortable environment for your dogs to get groomed. With a wide range of services we can cator
+                        to their every need, whether young, old, or in poor health.
+                    </P>
+
+                    <div class="button-group">
+                        <button class="dark">Make an Appointment</button>
+                        <button>Learn More</button>
+                    </div>
+
+                </div>
+
+                <!-- First image customers will see. -->
+                <div class="card image-card">
+                    <div class="placeholder-image"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview Section -->
+        <section class="dark">
+            <div class="section-inner">
+                <h2 class="center-text">Our Services</h2>
+
+                <!-- Grid of Cards-->
+                <div class="card-grid">
+                    <div class="service-card">
+                        <div class="placeholder-image"></div>
+
+                        <h4>Bathing</h4>
+                        <ul>
+                            <li>Deep cleansing shampoo</li>
+                            <li>Conditioning treatments</li>
+                            <li>Blow dry and brush</li>
+                            <li>Deodorizing rinse</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="placeholder-image"></div>
+
+                        <h4>Styling & Grooming</h4>
+                        <ul>
+                            <li>Breed-specific cuts</li>
+                            <li>Nail trimming & filing</li>
+                            <li>Ear cleaning</li>
+                            <li>Pad trimming</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="placeholder-image"></div>
+
+                        <h4>Medical Treatments</h4>
+                        <ul>
+                            <li>Flea & tick treatments</li>
+                            <li>Medicated baths</li>
+                            <li>Skin condition care</li>
+                            <li>Hot spot treatment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Hours + Salon Location Section -->
+        <section>
+            <div class="split">
+                <!-- Open Hours Card -->
+                <div class="card">
+                    <h2>Opening Hours</h2>
+                    <p>Please check our schedule before visiting.</p>
+
+                    <!-- Status Indicator -->
+                     <div class="status-container">
+                        <div class="status-bullet"></div>
+
+                        <div class="status-card open">
+                            <span>Open Now</span>
+                        </div>
+                     </div>
+
+                     <!-- Salon Hours List -->
+                    <div class="hours-list">
+                        <div class="hours-row">
+                            <span class="day">Monday-Friday</span>
+                            <span class="time">08:00 AM - 06:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Saturday</span>
+                            <span class="time">09:00 AM - 02:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Sunday</span>
+                            <span class="time">Closed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Salon Location Card -->
+                <div class="card"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Bar -->
+    <footer>
+        <p>©2026 Snazzy Paws Grooming, All rights reserved.</p>
+        <p>LOG-IN</p>
+    </footer>
+
+
+    <script>
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
