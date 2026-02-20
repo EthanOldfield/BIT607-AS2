@@ -1,128 +1,157 @@
-* {
+/* ---------------------- */
+/*  Reset & Box Sizing    */
+/* ---------------------- */
+*
+{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
+html, body
+{
     height: 100%;
+    font-family: Arial, sans-serif;
 }
 
-body {
-    height: 100%;
-    min-height: 100vh;
+/* ---------------------- */
+/*  Body Layout           */
+/* ---------------------- */
+body
+{
     display: flex;
     flex-direction: column;
-    font-family: Arial, sans-serif;
-    background: #fff;
+    min-height: 100vh;
 }
 
-header,
-footer {
+/* ---------------------- */
+/*  Header & Footer       */
+/* ---------------------- */
+header, footer
+{
     background-color: #ffffff;
-    padding: 16px;
-    text-align: left;
+    padding: 1rem;
     flex-shrink: 0;
-    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header {
+header
+{
     border-bottom: 1px solid #e5e7eb;
 }
 
-main {
+/* ---------------------- */
+/*  Main Section          */
+/* ---------------------- */
+main
+{
     flex: 1;
     display: flex;
     flex-direction: column;
     background-color: #ecf0f1;
 }
 
-section {
+section
+{
     display: flex;
     flex-direction: row;
-    padding: 64px;
-    background: white;
+    padding: 4rem;
+    background-color: #fff;
     border-bottom: 1px solid #e5e7eb;
-    gap: 16px;
+    gap: 1rem;
 }
 
-card {
+/* ---------------------- */
+/*  Cards                 */
+/* ---------------------- */
+.card
+{
     flex: 1;
     max-width: 50%;
-    padding: 32px;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem;
 }
 
-card p {
+.card p
+{
     max-width: 500px;
-    line-height: 1.5;
 }
 
-card.image-card {
+/* ---------------------- */
+/*  Image Card            */
+/* ---------------------- */
+.card.image-card
+{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.placeholder-image {
+.placeholder-image
+{
     width: 80%;
     max-width: 1920px;
     aspect-ratio: 16 / 9;
-    background: #ccc;
+    background-color: #ccc;
     border: 1px dashed #999;
 }
 
-h1 {
-    font-size: 48px;
+/* ---------------------- */
+/*  Headings & Text       */
+/* ---------------------- */
+h1
+{
+    font-size: 3rem;
     color: #1f2937;
-    margin: 0;
 }
 
-p {
-    font-size: 19.2px;
+p
+{
+    font-size: 1.2rem;
     color: #6b7280;
 }
 
-.button-group {
+/* ---------------------- */
+/*  Buttons               */
+/* ---------------------- */
+.button-group
+{
     display: flex;
-    gap: 16px;
-    margin-top: 16px;
-    flex-wrap: nowrap;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
-.button-group button {
-    padding: 16px 32px;
+header .button-group
+{
+    margin-top: 0;
+}
+
+.button-group button
+{
+    padding: 1rem 2rem;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
     white-space: nowrap;
-    outline: none;
-    transition: all 0.15s ease-in-out;
+
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid #d1d5db;
 }
 
-.button-group button:focus {
-    outline: none;
-}
-
-.appointment-btn {
-    background: #1f2937;
-    color: #fff;
+button.dark
+{
+    background-color: #1f2937;
+    color: white;
     border: none;
 }
 
-.learn-btn {
-    background: #fff;
-    color: #000;
-    border: 1px solid #d1d5db;
-    border-radius: 4px;
-}
-
-.button-group button:hover {
+.button-group button:hover
+{
     opacity: 0.9;
-}
-
-section:last-child {
-    border-bottom: 1px solid #e5e7eb;
 }
