@@ -86,9 +86,27 @@ section.dark
 
 .section-inner
 {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     width: 100%;
+}
+
+.center-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-hero .button-group
+{
+    justify-content: center;
+    margin-top: 0;
+}
+
+.center-hero h1
+{
+    margin-bottom: 0;
 }
 
 /* ---------------------- */
@@ -255,6 +273,11 @@ a.button.dark:hover
 {
     margin: 0 0 0.5rem 0;
     font-weight: 600;
+}
+
+.service-card p
+{
+    font-size: 1rem;
 }
 
 
