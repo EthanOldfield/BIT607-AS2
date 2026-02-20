@@ -15,14 +15,28 @@
     <!-- Navigation Bar -->
     <header>
         <!-- Icon + Title -->
-        <h2>----- Snazzy Paws Grooming</h2>
+        <h2 class="header-title">
+            <span class="full-title">----- Snazzy Paws Grooming</span>
+            <span class="short-title">Snazzy Paws</span>
+        </h2>
 
         <!-- Navigation Buttons -->
-        <div class="button-group">
+        <div class="button-group desktop-nav">
             <button>Gallery</button>
             <button>View Services</button>
             <button>Get Help</button>
             <button class="dark">Book Now</button>
+        </div>
+
+        <!-- Mobile dropdown button -->
+        <div class="mobile-nav">
+            <button id="mobile-menu-toggle">☰</button>
+            <div id="mobile-menu" class="mobile-menu hidden">
+                <button>Gallery</button>
+                <button>View Services</button>
+                <button>Get Help</button>
+                <button class="dark">Book Now</button>
+            </div>
         </div>
     </header>
 
@@ -143,5 +157,15 @@
         <p>©2026 Snazzy Paws Grooming, All rights reserved.</p>
         <p>LOG-IN</p>
     </footer>
+
+
+    <script>
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
