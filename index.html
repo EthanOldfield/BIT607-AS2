@@ -67,7 +67,12 @@
                         <source srcset="
                             images/jcomp_low.webp 480w,
                             images/jcomp_medium.webp 768w,
-                            images/jcomp_full.webp 2000w" type="image/webp">
+                            images/jcomp_full.webp 2000w"
+                            sizes="
+                                (max-width: 480px) 480px,
+                                (max-width: 768px) 768px,
+                                2000px"
+                            type="image/webp">
 
                         <img src="images/jcomp_full.webp" class="placeholder-image" alt="Dog getting cleaned with soap" loading="lazy">
                     </picture>
