@@ -232,6 +232,9 @@ a.button.dark:hover
 .center-text
 {
     text-align: center;
+}
+.header-margin
+{
     margin-bottom: 3rem;
 }
 .card-grid
@@ -526,5 +529,9 @@ a.button.dark:hover
 
     .mobile-menu button:last-child {
         border-bottom: none;
+    }
+
+    .card-grid.minimal-grid {
+        grid-template-columns: 1fr; /* 1 per row on small screens */
     }
 }

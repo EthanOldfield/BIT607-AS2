@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <!-- Document Title + Icon -->
+    <title>Document</title>
+    <link rel="Icon" type="image/x-icon" href="/">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/booking.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <!-- Icon + Title -->
+        <h2 class="header-title">
+            <a href="index.html" class="home-link">
+                <span class="full-title">----- Snazzy Paws Grooming</span>
+                <span class="short-title">Snazzy Paws</span>
+            </a>
+        </h2>
+
+        <!-- Navigation Buttons -->
+        <div class="button-group desktop-nav">
+            <a href="gallery.html" class="button">Gallery</a>
+            <a href="services.html" class="button">View Services</a>
+            <a href="contact.html" class="button">Get Help</a>
+            <a  href="booking.html" class="button dark">Book Now</a>
+        </div>
+
+        <!-- Mobile dropdown button -->
+        <div class="mobile-nav">
+            <button id="mobile-menu-toggle">☰</button>
+            <div id="mobile-menu" class="mobile-menu hidden">
+                <button>Gallery</button>
+                <button>View Services</button>
+                <button>Get Help</button>
+                <button class="dark">Book Now</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Core Page Content -->
+    <main>
+        <!-- Welcome Section (introduction and initial image) -->
+        <section>
+            <div class="section-inner center-hero">
+                <h1 class="center-text">Like our gallery?</h1>
+                <p class="center-text header-margin">See it on your pet today after booking!</P>
+
+                <div class="button-group">
+                    <a href="services.html" class="button dark">Services</a>
+                    <a href="contact.html" class="button">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Care Guidelines & Warnings Section -->
+        <section>
+            <div class="section-inner">
+                <h2 class="center-text header-margin">Care Guidelines & Warnings</h2>
+
+                <!-- Grid of Cards-->
+                <div class="card-grid">
+                    <div class="service-card">
+                        <h4 class="center-text">Breed Specifics</h4>
+                        <p class="center-text">Certain breeds may require alternative de-shedding techniques.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <h4 class="center-text">Age Considerations</h4>
+                        <p class="center-text">Seniors can have frequent rest breaks.</p>
+                    </div>
+
+                    <div class="service-card center-text">
+                        <h4 class="center-text">Temperament</h4>
+                        <p class="center-text">Please inform staff if your pet is prone to anxiety,
+                            aggressiveness, or fears noises like dryers.
+                        </p>
+                    </div>
+
+                    <div class="service-card center-text">
+                        <h4 class="center-text">Medical Conditions</h4>
+                        <p class="center-text">Disclose medical conditions or recent surgeries before booking.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Form Section -->
+         <section class="dark">
+            <div class="section-inner">
+                <h2 class="center-text header-margin">Booking Form</h2>
+
+                <!-- Grid of Cards-->
+                <div class="card-grid">
+                    <div class="service-card">
+                    </div>
+
+                    <div class="service-card">
+                    </div>
+                </div>
+            </div>
+         </section>
+    </main>
+
+    <!-- Footer Bar -->
+    <footer>
+        <p>©2026 Snazzy Paws Grooming, All rights reserved.</p>
+        <p>LOG-IN</p>
+    </footer>
+
+
+    <script>
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
