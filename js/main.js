@@ -1,0 +1,21 @@
+const toggle = document.getElementById('mobile-menu-toggle');
+const menu = document.getElementById('mobile-menu');
+
+// Listen for clicks to open the nav menu.
+toggle.addEventListener('click', (e) =>
+{
+    e.stopPropagation();
+    menu.classList.toggle('hidden');
+});
+
+// Close nav menu when clicking outside.
+document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.add('hidden');
+    }
+});
+
+// Close nav menu on scroll.
+window.addEventListener('scroll', () => {
+    menu.classList.add('hidden');
+});
