@@ -281,6 +281,43 @@ a.button.dark:hover
 }
 
 
+.card-grid .service-card.minimal {
+    grid-column: span 1; /* default is 1, can adjust */
+    width: auto;          /* let grid handle width */
+    text-align: center;
+}
+
+.card-grid .service-card.minimal p
+{
+    color: #374151
+}
+
+.card-grid.minimal-grid {
+    grid-template-columns: repeat(3, 1fr); /* exactly 3 per row */
+    gap: 2rem;
+}
+.card-grid.minimal-grid .service-card.minimal {
+    width: auto;           /* full grid cell width */
+    text-align: center;
+}
+
+.bullet-item {
+    display: flex;
+    align-items: center; /* vertically center the bullet with the text */
+    justify-content: center;
+    gap: 0.5rem;         /* space between bullet and text */
+}
+
+.card-bullet {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background-color: #374151;
+    flex-shrink: 0;      /* prevent shrinking */
+}
+
+
+
 /* Status Indicator */
 .status-container
 {
