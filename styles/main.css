@@ -542,16 +542,16 @@ a.button.dark:hover
         cursor: pointer;
     }
 
-    .mobile-menu button
+    .mobile-menu a
     {
-        height: 2rem;
+        height: fit-content;
         border: none;
         border-radius: 0px;
         border-bottom: 1px solid #d1d5db;
         font-size: 1rem;
     }
 
-    .mobile-menu button:last-child {
+    .mobile-menu a:last-child {
         border-bottom: none;
     }
 
