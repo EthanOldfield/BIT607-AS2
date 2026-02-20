@@ -29,7 +29,6 @@ body
 /* ---------------------- */
 header, footer
 {
-    background-color: #ffffff;
     padding: 1rem;
     flex-shrink: 0;
 
@@ -40,7 +39,20 @@ header, footer
 
 header
 {
+    background-color: #ffffff;
     border-bottom: 1px solid #e5e7eb;
+}
+
+footer
+{
+    padding: 1.5rem;
+    background-color: #1f2937;
+}
+
+footer p
+{
+    color: #9ca3af;
+    font-size: 0.8rem;
 }
 
 /* ---------------------- */
