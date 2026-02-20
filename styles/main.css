@@ -243,8 +243,8 @@ button.dark
 
 .status-bullet
 {
-    width: 1rem;
-    height: 1rem;
+    width: 0.7rem;
+    height: 0.7rem;
     border-radius: 50%;
     background-color: #15803d;
 }
@@ -274,3 +274,36 @@ button.dark
     padding: 0.5rem;
 }
 
+
+
+/* Open hours time things */
+.hours-list
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hours-row
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #d1d5db;
+    font-size: 1rem;
+    color: #1f2937;
+}
+
+/* Remove underline for last row */
+.hours-row:last-child
+{
+    border-bottom: none;
+}
+
+
+.hours-row .day,
+.hours-row .time
+{
+    flex-shrink: 0;
+}
