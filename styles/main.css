@@ -230,3 +230,47 @@ button.dark
     margin: 0 0 0.5rem 0;
     font-weight: 600;
 }
+
+
+/* Status Indicator */
+.status-container
+{
+    display: flex;
+    align-items: center; /* vertical center */
+    gap: 0.75rem;       /* space between bullet and pill */
+    margin-bottom: 1rem;
+}
+
+.status-bullet
+{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #15803d;
+}
+
+.status-card
+{
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.status-card.open
+{
+    background-color: #f0fdf4;
+    color: #15803d;
+    width: fit-content;
+    padding: 0.5rem;
+}
+
+.status-card.closed
+{
+    background-color: #fdf0f0;
+    color: #961919;
+    width: fit-content;
+    padding: 0.5rem;
+}
+
