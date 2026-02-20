@@ -237,6 +237,10 @@ a.button.dark:hover
 {
     margin-bottom: 3rem;
 }
+.half-margin
+{
+    margin-bottom: 1.5rem;
+}
 .card-grid
 {
     display: grid;
