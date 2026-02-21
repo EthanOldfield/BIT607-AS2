@@ -1,5 +1,5 @@
 /* ---------------------- */
-/*  Reset & Box Sizing    */
+/*  ANCHOR - Reset        */
 /* ---------------------- */
 *
 {
@@ -14,9 +14,6 @@ html, body
     font-family: Arial, sans-serif;
 }
 
-/* ---------------------- */
-/*  Body Layout           */
-/* ---------------------- */
 body
 {
     display: flex;
@@ -24,8 +21,25 @@ body
     min-height: 100vh;
 }
 
+
 /* ---------------------- */
-/*  Header & Footer       */
+/*  ANCHOR - Text         */
+/* ---------------------- */
+h1
+{
+    font-size: 3rem;
+    color: #1f2937;
+}
+
+p
+{
+    font-size: 1.2rem;
+    color: #6b7280;
+}
+
+
+/* ---------------------- */
+/*  ANCHOR - Header       */
 /* ---------------------- */
 header, footer
 {
@@ -43,12 +57,6 @@ header
     border-bottom: 1px solid #e5e7eb;
 }
 
-.home-link {
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-}
-
 footer
 {
     padding: 1.5rem;
@@ -61,8 +69,41 @@ footer p
     font-size: 0.8rem;
 }
 
+.home-link
+{
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+.header-title
+{
+    font-size: 2rem;
+}
+
+.short-title
+{
+    display: none;
+}
+
+
 /* ---------------------- */
-/*  Main Section          */
+/*  ANCHOR - Navigation   */
+/* ---------------------- */
+.desktop-nav
+{
+    display: flex;
+    gap: 1rem;
+}
+
+.mobile-nav
+{
+    display: none;
+}
+
+
+/* ---------------------- */
+/*  ANCHOR - Main         */
 /* ---------------------- */
 main
 {
@@ -91,11 +132,17 @@ section.dark
     width: 100%;
 }
 
-.center-hero {
+.center-hero
+{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.center-hero h1
+{
+    margin-bottom: 0;
 }
 
 .center-hero .button-group
@@ -104,84 +151,9 @@ section.dark
     margin-top: 0;
 }
 
-.center-hero h1
-{
-    margin-bottom: 0;
-}
 
 /* ---------------------- */
-/*  Cards                 */
-/* ---------------------- */
-.card
-{
-    flex: 1;
-    max-width: 50%;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.card p
-{
-    max-width: 500px;
-}
-
-/* ---------------------- */
-/*  Image Card            */
-/* ---------------------- */
-.card.image-card
-{
-    display: flex;
-    flex-direction: column;
-
-    align-items: flex-start;
-    gap: 0.5rem;
-}
-
-.placeholder-image
-{
-    width: 80%;
-    max-width: 1920px;
-    aspect-ratio: 16 / 9;
-    background-color: #ccc;
-    border: 1px dashed #999;
-}
-
-img.placeholder-image
-{
-    width: 100%;
-    max-width: 1920px;
-    aspect-ratio: unset;
-    border: none;
-
-    height: auto;
-    display: block;
-}
-
-.image-credit {
-    font-size: 0.8rem;
-    color: #666;
-    margin-top: 0;
-}
-
-/* ---------------------- */
-/*  Headings & Text       */
-/* ---------------------- */
-h1
-{
-    font-size: 3rem;
-    color: #1f2937;
-}
-
-p
-{
-    font-size: 1.2rem;
-    color: #6b7280;
-}
-
-/* ---------------------- */
-/*  Buttons               */
+/*  ANCHOR - Buttons      */
 /* ---------------------- */
 .button-group
 {
@@ -228,73 +200,42 @@ a.button.dark:hover
     background-color: #1f2937;
 }
 
+
 /* ---------------------- */
-/*  Universal               */
+/*  ANCHOR - Cards        */
 /* ---------------------- */
-.split
+.card
 {
+    flex: 1;
+    max-width: 50%;
+    padding: 2rem;
     display: flex;
+    flex-direction: column;
     gap: 1rem;
-    flex-wrap: wrap;
-}
-.split > .card
-{
-    flex: 1 1 400px;
-    max-width: 100%;
-}
-.split .image-card .placeholder-image
-{
-    width: 100%;
-    height: auto;
 }
 
-.center-text
+.card p
 {
-    text-align: center;
+    max-width: 500px;
 }
-.header-margin
+
+.card.image-card
 {
-    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
 }
-.half-margin
-{
-    margin-bottom: 1.5rem;
-}
-.card-grid
-{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
+
 .service-card
 {
     background: #e5e7eb;
     padding: 2rem;
     border-radius: 8px;
-
     display: flex;
     flex-direction: column;
 }
-.service-card .placeholder-image
-{
-    width: 100%;
-    margin-bottom: 0.5rem;
-}
-.service-card ul
-{
-    list-style-position: outside;
-    padding-left: 1rem;
-    color: #6b7280; /* same as your p */
-}
-.service-card li
-{
-    margin-bottom: 0.3rem;
-}
-.service-card li::marker
-{
-    color: #6b7280;
-    font-size: 0.7em;
-}
+
 .service-card h4
 {
     margin: 0 0 0.5rem 0;
@@ -306,46 +247,149 @@ a.button.dark:hover
     font-size: 1rem;
 }
 
+.service-card ul
+{
+    list-style-position: outside;
+    padding-left: 1rem;
+    color: #6b7280;
+}
 
-.card-grid .service-card.minimal {
-    grid-column: span 1; /* default is 1, can adjust */
-    width: auto;          /* let grid handle width */
+.service-card li
+{
+    margin-bottom: 0.3rem;
+}
+
+.service-card li::marker
+{
+    color: #6b7280;
+    font-size: 0.7em;
+}
+
+.service-card .placeholder-image
+{
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.card-grid .service-card.minimal
+{
+    grid-column: span 1;
+    width: auto;
     text-align: center;
 }
 
 .card-grid .service-card.minimal p
 {
-    color: #374151
+    color: #374151;
 }
 
-.card-grid.minimal-grid {
-    grid-template-columns: repeat(3, 1fr); /* exactly 3 per row */
+
+/* ---------------------- */
+/*  ANCHOR - Images       */
+/* ---------------------- */
+.placeholder-image
+{
+    width: 80%;
+    max-width: 1920px;
+    aspect-ratio: 16 / 9;
+    background-color: #ccc;
+    border: 1px dashed #999;
+}
+
+img.placeholder-image
+{
+    width: 100%;
+    max-width: 1920px;
+    aspect-ratio: unset;
+    border: none;
+    height: auto;
+    display: block;
+}
+
+.image-credit
+{
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0;
+}
+
+
+/* ---------------------- */
+/*  ANCHOR - Layout       */
+/* ---------------------- */
+.split
+{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.split > .card
+{
+    flex: 1 1 400px;
+    max-width: 100%;
+}
+
+.split .image-card .placeholder-image
+{
+    width: 100%;
+    height: auto;
+}
+
+.card-grid
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
-.bullet-item {
-    display: flex;
-    align-items: center; /* vertically center the bullet with the text */
-    justify-content: center;
-    gap: 0.5rem;         /* space between bullet and text */
+.card-grid.minimal-grid
+{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
-.card-bullet {
+.center-text
+{
+    text-align: center;
+}
+
+.header-margin
+{
+    margin-bottom: 3rem;
+}
+
+.half-margin
+{
+    margin-bottom: 1.5rem;
+}
+
+.bullet-item
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.card-bullet
+{
     width: 0.7rem;
     height: 0.7rem;
     border-radius: 50%;
     background-color: #374151;
-    flex-shrink: 0;      /* prevent shrinking */
+    flex-shrink: 0;
 }
 
 
-
-/* Status Indicator */
+/* ---------------------- */
+/*  ANCHOR - Status       */
+/* ---------------------- */
 .status-container
 {
     display: flex;
-    align-items: center; /* vertical center */
-    gap: 0.75rem;       /* space between bullet and pill */
+    align-items: center;
+    gap: 0.75rem;
     margin-bottom: 1rem;
 }
 
@@ -379,8 +423,9 @@ a.button.dark:hover
 }
 
 
-
-/* Open hours time things */
+/* ---------------------- */
+/*  ANCHOR - Hours        */
+/* ---------------------- */
 .hours-list
 {
     display: flex;
@@ -399,12 +444,10 @@ a.button.dark:hover
     color: #1f2937;
 }
 
-/* Remove underline for last row */
 .hours-row:last-child
 {
     border-bottom: none;
 }
-
 
 .hours-row .day,
 .hours-row .time
@@ -413,48 +456,77 @@ a.button.dark:hover
 }
 
 
-.header-title
+/* ---------------------- */
+/*  ANCHOR - Mobile       */
+/* ---------------------- */
+@media (max-width: 768px)
 {
-    font-size: 2rem;
-}
-
-/* Hide mobile nav by default */
-.mobile-nav {
-    display: none;
-}
-
-/* Show desktop nav normally */
-.desktop-nav {
-    display: flex;
-    gap: 1rem;
-}
-
-.short-title {
-    display: none;
-}
-
-
-/* Mobile / small screens */
-@media (max-width: 768px) {
-    /* Shorten the title */
-    .header-title {
+    .header-title
+    {
         font-size: 1.5rem;
     }
 
-    .full-title {
+    .full-title
+    {
         display: none;
     }
 
-    .short-title {
+    .short-title
+    {
         display: inline;
         font-weight: bold;
     }
 
-    .desktop-nav {
+    .desktop-nav
+    {
         display: none !important;
     }
-    .mobile-nav {
+
+    .mobile-nav
+    {
         display: flex;
+    }
+
+    .mobile-menu
+    {
+        position: absolute;
+        top: 4rem;
+        right: 0;
+        background: white;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        flex-direction: column;
+        display: flex;
+        min-width: 150px;
+        z-index: 100;
+        overflow: hidden;
+    }
+
+    .mobile-menu.hidden
+    {
+        display: none;
+    }
+
+    .mobile-menu a
+    {
+        height: fit-content;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #d1d5db;
+        font-size: 1rem;
+    }
+
+    .mobile-menu a:last-child
+    {
+        border-bottom: none;
+    }
+
+    #mobile-menu-toggle
+    {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
     }
 
     h1, h2, p
@@ -473,12 +545,14 @@ a.button.dark:hover
         gap: 0.5rem;
     }
 
-    section {
-        padding: 2rem; /* reduce padding on mobile */
+    section
+    {
+        padding: 2rem;
     }
 
-    .split > .card {
-        padding: 0.5rem; /* smaller card padding */
+    .split > .card
+    {
+        padding: 0.5rem;
     }
 
     .status-container
@@ -492,46 +566,8 @@ a.button.dark:hover
         justify-content: center;
     }
 
-    /* Dropdown menu */
-    .mobile-menu {
-        position: absolute;
-        top: 4rem;
-        right: 0;
-        background: white;
-        border: 1px solid #d1d5db;
-        border-radius: 8px;
-        flex-direction: column;
-        display: flex;
-        min-width: 150px;
-        z-index: 100;
-        overflow: hidden;
-    }
-    .mobile-menu.hidden {
-        display: none;
-    }
-
-    /* Mobile hamburger button */
-    #mobile-menu-toggle {
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-
-    .mobile-menu a
+    .card-grid.minimal-grid
     {
-        height: fit-content;
-        border: none;
-        border-radius: 0;
-        border-bottom: 1px solid #d1d5db;
-        font-size: 1rem;
-    }
-
-    .mobile-menu a:last-child {
-        border-bottom: none;
-    }
-
-    .card-grid.minimal-grid {
-        grid-template-columns: 1fr; /* 1 per row on small screens */
+        grid-template-columns: 1fr;
     }
 }
