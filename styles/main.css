@@ -162,7 +162,7 @@ img.placeholder-image
 .image-credit {
     font-size: 0.8rem;
     color: #666;
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 /* ---------------------- */
@@ -322,10 +322,6 @@ a.button.dark:hover
     grid-template-columns: repeat(3, 1fr); /* exactly 3 per row */
     gap: 2rem;
 }
-.card-grid.minimal-grid .service-card.minimal {
-    width: auto;           /* full grid cell width */
-    text-align: center;
-}
 
 .bullet-item {
     display: flex;
@@ -363,27 +359,23 @@ a.button.dark:hover
 
 .status-card
 {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
+    width: fit-content;
     border-radius: 12px;
     font-size: 0.9rem;
     font-weight: 600;
+    padding: 0.5rem;
 }
 
 .status-card.open
 {
     background-color: #f0fdf4;
     color: #15803d;
-    width: fit-content;
-    padding: 0.5rem;
 }
 
 .status-card.closed
 {
     background-color: #fdf0f0;
     color: #961919;
-    width: fit-content;
-    padding: 0.5rem;
 }
 
 
@@ -475,18 +467,8 @@ a.button.dark:hover
         font-size: 2rem;
     }
 
-    header {
-        justify-content: space-between;
-    }
-
-    footer p
-    {
-        font-size: 0.8rem;
-    }
-
     footer
     {
-        display: flex;
         flex-direction: column;
         gap: 0.5rem;
     }
@@ -506,14 +488,8 @@ a.button.dark:hover
 
     .button-group
     {
-        display: flex;
         flex-wrap: wrap;
         justify-content: center;
-    }
-
-    .button-group button
-    {
-        flex: none;
     }
 
     /* Dropdown menu */
@@ -546,7 +522,7 @@ a.button.dark:hover
     {
         height: fit-content;
         border: none;
-        border-radius: 0px;
+        border-radius: 0;
         border-bottom: 1px solid #d1d5db;
         font-size: 1rem;
     }
