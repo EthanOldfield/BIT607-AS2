@@ -229,11 +229,17 @@ a.button.dark:hover
 
 .service-card
 {
-    background: #e5e7eb;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
     padding: 2rem;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+}
+
+section.dark .service-card
+{
+    background-color: #ffffff;
 }
 
 .service-card h4
