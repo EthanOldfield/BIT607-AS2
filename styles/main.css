@@ -76,9 +76,12 @@ footer p
 
 .home-link
 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
     text-decoration: none;
     color: inherit;
-    display: inline-block;
 }
 
 .short-title
@@ -293,6 +296,12 @@ section.dark .service-card
 /* ---------------------- */
 /*  ANCHOR - Images       */
 /* ---------------------- */
+.nav-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: block;
+}
+
 .placeholder-image
 {
     width: 80%;
@@ -319,6 +328,27 @@ img.placeholder-image
     margin-top: 0;
 }
 
+.icon-circle {
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto 1rem auto;
+
+    border: 1px solid #ccc;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.icon-circle img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    transform: translateY(0.1rem);
+}
 
 /* ---------------------- */
 /*  ANCHOR - Layout       */
