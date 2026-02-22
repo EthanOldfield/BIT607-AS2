@@ -911,4 +911,25 @@ img.placeholder-image
     {
         grid-template-columns: 1fr;
     }
+
+    .booking-card
+    {
+        flex-direction: column;
+    }
+
+    .booking-group
+    {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .booking-group:last-child
+    {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
 }
