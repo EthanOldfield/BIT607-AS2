@@ -280,6 +280,36 @@ section.dark .service-card
     margin-bottom: 0.5rem;
 }
 
+.booking-card .card-grid.minimal-grid
+{
+    gap: 0.5rem;
+}
+
+.addon-card
+{
+    padding: 0.75rem 0.6rem;
+    cursor: pointer;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.addon-checkbox
+{
+    width: 1.1rem;
+    height: 1.1rem;
+    flex-shrink: 0;
+    cursor: pointer;
+    accent-color: #1f2937;
+}
+
+.addon-card label
+{
+    cursor: pointer;
+    font-size: 1rem;
+    color: #374151;
+}
+
 .card-grid .service-card.minimal
 {
     grid-column: span 1;
@@ -604,6 +634,12 @@ img.placeholder-image
     border-radius: 8px;
     display: flex;
     flex-direction: row;
+}
+
+.booking-card.vertical
+{
+    flex-direction: column;
+    padding: 2rem;
 }
 
 .booking-group
