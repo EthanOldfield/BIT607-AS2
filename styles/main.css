@@ -292,7 +292,6 @@ section.dark .service-card
     color: #374151;
 }
 
-
 /* ---------------------- */
 /*  ANCHOR - Images       */
 /* ---------------------- */
@@ -591,6 +590,69 @@ img.placeholder-image
     height: 100%;
     border: none;
     display: block;
+}
+
+/* ---------------------- */
+/*  ANCHOR - Booking      */
+/* ---------------------- */
+
+.booking-card
+{
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    padding: 2rem 0 2rem 0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+}
+
+.booking-group
+{
+    width: 50%;
+    border-right: 1px solid #e5e7eb;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.booking-group:last-child
+{
+    border: none;
+}
+
+.booking-field
+{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.booking-field label
+{
+    white-space: nowrap;
+
+    width: 3rem;
+}
+
+.booking-field input
+{
+    flex: 1;
+}
+
+.booking-field.stacked
+{
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.booking-field.stacked label
+{
+    width: auto;
+    max-width: 100%;
+}
+
+.booking-field.stacked input
+{
+    width: 100%;
 }
 
 /* ---------------------- */
