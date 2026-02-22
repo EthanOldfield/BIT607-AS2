@@ -497,6 +497,65 @@ img.placeholder-image
 }
 
 /* ---------------------- */
+/*  ANCHOR - Contact Card */
+/* ---------------------- */
+.contact-card
+{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.contact-card:last-of-type
+{
+    border-bottom: none;
+    margin-bottom: 1rem;
+}
+
+.contact-card-icon-holder
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    background-color: #e7e8e9;
+    border-radius: 8px;
+}
+
+.contact-card-icon
+{
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.contact-card-text
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.contact-card-title
+{
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1f2937;
+}
+
+.contact-card-detail
+{
+    font-size: 0.95rem;
+    color: #6b7280;
+}
+
+/* ---------------------- */
 /*  ANCHOR - External Link*/
 /* ---------------------- */
 .external-link-icon
