@@ -11,16 +11,33 @@ const addonPrices = {
 function getBasePrice(age)
 {
     if (age <= 3) return 30;
-    if (age <= 7) return 30 + ((age - 3) / 4) * 10;  // 30-40 across puppy years
-    if (age <= 10) return 40 + ((age - 7) / 3) * 10; // 40-50 across adult years
-    return Math.min(50 + ((age - 10) / 5) * 10, 60); // 50-60 capped at 60
+    if (age <= 7) return 30 + ((age - 3) / 4) * 10;
+    if (age <= 10) return 40 + ((age - 7) / 3) * 10;
+    return Math.min(50 + ((age - 10) / 5) * 10, 60);
 }
 
 function updateSummary()
 {
-    const breed = document.getElementById('breed').value || '—';
-    document.getElementById('summary-service').textContent = breed;
+    // Age + service type label
+    const age = parseFloat(document.getElementById('age').value);
+    const basePrice = isNaN(age) ? 0 : getBasePrice(age);
 
+    let ageLabel = '—';
+    if (!isNaN(age))
+    {
+        if (age <= 3) ageLabel = 'Puppy';
+        else if (age <= 7) ageLabel = 'Adult';
+        else ageLabel = 'Elderly';
+    }
+
+    // Medical
+    const medical = document.getElementById('medical');
+    const medicalCost = (medical && medical.checked) ? 30 : 0;
+    if (medical && medical.checked && ageLabel !== '—') ageLabel += ' + Medical';
+
+    document.getElementById('summary-service').textContent = ageLabel;
+
+    // Datetime
     const datetime = document.getElementById('datetime').value;
     if (datetime)
     {
@@ -30,12 +47,8 @@ function updateSummary()
     }
     else
     {
-        document.getElementById('summary-appointment').textContent = '—';
+        document.getElementById('summary-appointment').textContent = '<Please Choose Time>';
     }
-
-    // Age-based base price
-    const age = parseFloat(document.getElementById('age').value);
-    const basePrice = isNaN(age) ? 0 : getBasePrice(age);
 
     // Addons
     let addonTotal = 0;
@@ -50,20 +63,64 @@ function updateSummary()
         }
     }
 
-    // Medical needs surcharge
-    const medical = document.getElementById('medical');
-    const medicalCost = (medical && medical.checked) ? 30 : 0;
-    const total = basePrice + addonTotal + medicalCost;
+    // Addon summary text
+    const MAX_SHOWN = 2;
+    let addonText = 'No add-ons';
+    if (selected.length > 0)
+    {
+        const shown = selected.slice(0, MAX_SHOWN).join(', ');
+        const remaining = selected.length - MAX_SHOWN;
+        addonText = remaining > 0 ? `${shown} +${remaining} more` : shown;
+    }
+    document.getElementById('summary-addons').textContent = addonText;
 
-    document.getElementById('summary-cost').textContent =
-        `$${total.toFixed(2)} ${selected.length ? '' : '(No add-ons)'}`;
+    // Total
+    const total = basePrice + addonTotal + medicalCost;
+    document.getElementById('summary-cost').textContent = `$${total.toFixed(2)}`;
 }
 
-// Watch all relevant inputs
-['breed', 'datetime', 'age', 'medical'].forEach(id =>
+// Watchers
+['breed', 'datetime', 'age'].forEach(id =>
     document.getElementById(id).addEventListener('input', updateSummary));
+
+document.getElementById('medical').addEventListener('change', updateSummary);
 
 Object.keys(addonPrices).forEach(id =>
     document.getElementById(id).addEventListener('change', updateSummary));
 
 updateSummary();
+
+
+// Submit form
+document.getElementById('booking-form').addEventListener('submit', function(e)
+{
+    e.preventDefault();
+
+    // Collect all data
+    const bookingData = {
+        pet: {
+            name: document.getElementById('name').value,
+            age: document.getElementById('age').value,
+            breed: document.getElementById('breed').value,
+            medicalNeeds: document.getElementById('medical').checked,
+            extra: document.getElementById('extra').value
+        },
+        owner: {
+            dob: document.getElementById('dob').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            datetime: document.getElementById('datetime').value
+        },
+        addons: Object.keys(addonPrices).filter(id => document.getElementById(id).checked),
+        total: document.getElementById('summary-cost').textContent
+    };
+
+    console.log('Booking submitted:', bookingData);
+
+    // Reset form
+    this.reset();
+    document.getElementById('age').value = 1;
+    updateSummary();
+
+    alert('Booking submitted successfully! We will be in touch shortly.');
+});
