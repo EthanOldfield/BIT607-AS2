@@ -112,7 +112,10 @@
                                 <label for="age">Age:</label>
                                 <div class="number-input">
                                     <button type="button" class="number-btn" onclick="this.parentNode.querySelector('input').stepDown()">−</button>
-                                    <input type="number" id="age" required min="0"/>
+
+                                    <input type="number" id="age" required min="0" max="40"
+                                        onkeydown="return ['Backspace','Tab','ArrowLeft','ArrowRight'].includes(event.key) || /[0-9]/.test(event.key)"/>
+
                                     <button type="button" class="number-btn" onclick="this.parentNode.querySelector('input').stepUp()">+</button>
                                 </div>
                             </div>
@@ -148,7 +151,7 @@
 
                             <div class="booking-field stacked">
                                 <label for="datetime">Appointment Date & Time:</label>
-                                <input type="datetime-local" id="datetime" required/>
+                                <input type="datetime-local" id="datetime" class="appointment-date-input" required/>
                             </div>
                         </div>
                     </div>

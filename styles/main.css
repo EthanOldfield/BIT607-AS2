@@ -717,6 +717,19 @@ img.placeholder-image
     background: #e5e7eb;
 }
 
+.appointment-date-input
+{
+    flex: 1;
+
+    min-height: 10rem;
+
+    padding: 0 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0px;
+    font-size: 1rem;
+    color: #1f2937;
+}
+
 /* ---------------------- */
 /*  ANCHOR - Mobile       */
 /* ---------------------- */
