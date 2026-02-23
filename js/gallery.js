@@ -27,12 +27,15 @@ workImages.forEach(img => {
 });
 
 // Card sliding logic.
-next.addEventListener('click', () => {
-    current++;
-    track.style.transform = `translateX(-${current * 100}%)`;
-});
+function getSlideWidth() {
+    const gap = parseFloat(getComputedStyle(track).gap);
+    return document.querySelector('.carousel-slide').offsetWidth + gap;
+}
 
-prev.addEventListener('click', () => {
-    current--;
-    track.style.transform = `translateX(-${current * 100}%)`;
-});
+function goTo(index) {
+    current = index;
+    track.style.transform = `translateX(-${current * getSlideWidth()}px)`;
+}
+
+next.addEventListener('click', () => goTo(current + 1));
+prev.addEventListener('click', () => goTo(current - 1));
