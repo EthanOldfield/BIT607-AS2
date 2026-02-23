@@ -693,7 +693,9 @@ img.placeholder-image
 {
     flex: 1;
     height: 1.75rem;
+
     width: 100%;
+    min-width: 0;
 }
 
 .booking-field select
