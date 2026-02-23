@@ -62,3 +62,10 @@
 
 .carousel-arrow:hover { background-color: var(--bg-button-hover); }
 .carousel-arrow:disabled { opacity: 0.3; cursor: default; }
+
+
+@media (min-width: 769px) {
+    .carousel-slide {
+        width: calc((100% - 3rem) / 3);
+    }
+}
