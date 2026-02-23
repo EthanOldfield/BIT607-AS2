@@ -1,3 +1,4 @@
+const wrapper = document.querySelector('.carousel-track-wrapper');
 const track = document.querySelector('.carousel-track');
 const prev = document.querySelector('.carousel-arrow.prev');
 const next = document.querySelector('.carousel-arrow.next');
@@ -70,3 +71,51 @@ requestAnimationFrame(() => goTo(0));
 
 next.addEventListener('click', () => goTo(current + 1));
 prev.addEventListener('click', () => goTo(current - 1));
+
+// Drag / swipe logic.
+let dragStartX = 0, dragDeltaX = 0, isDragging = false;
+
+wrapper.addEventListener('mousedown', e => {
+    e.preventDefault();
+    dragStartX = e.clientX;
+    dragDeltaX = 0;
+    isDragging = true;
+    track.classList.add('no-transition');
+    wrapper.classList.add('dragging');
+});
+
+window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    dragDeltaX = e.clientX - dragStartX;
+    track.style.transform = `translateX(-${current * getSlideWidth() - dragDeltaX}px)`;
+});
+
+window.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.classList.remove('no-transition');
+    wrapper.classList.remove('dragging');
+    const threshold = getSlideWidth() * 0.15;
+    dragDeltaX < -threshold ? goTo(current + 1) : dragDeltaX > threshold ? goTo(current - 1) : goTo(current);
+});
+
+wrapper.addEventListener('touchstart', e => {
+    dragStartX = e.touches[0].clientX;
+    dragDeltaX = 0;
+    isDragging = true;
+    track.classList.add('no-transition');
+}, { passive: true });
+
+wrapper.addEventListener('touchmove', e => {
+    if (!isDragging) return;
+    dragDeltaX = e.touches[0].clientX - dragStartX;
+    track.style.transform = `translateX(-${current * getSlideWidth() - dragDeltaX}px)`;
+}, { passive: true });
+
+wrapper.addEventListener('touchend', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.classList.remove('no-transition');
+    const threshold = getSlideWidth() * 0.15;
+    dragDeltaX < -threshold ? goTo(current + 1) : dragDeltaX > threshold ? goTo(current - 1) : goTo(current);
+});

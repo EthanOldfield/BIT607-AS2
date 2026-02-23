@@ -9,6 +9,17 @@
     overflow: hidden;
     flex: 1;
     border-radius: 8px;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.carousel-track-wrapper.dragging {
+    cursor: grabbing;
+}
+
+.carousel-track.no-transition {
+    transition: none;
 }
 
 .carousel-track {
@@ -97,6 +108,10 @@
 @media (min-width: 769px) {
     .carousel-slide {
         width: calc((100% - 3rem) / 3);
+    }
+
+    .carousel-dots {
+        display: none;
     }
 }
 
