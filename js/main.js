@@ -92,3 +92,27 @@ function updateOpenStatus()
 }
 
 updateOpenStatus();
+
+
+
+
+
+// Limit image quality on mobile or poor connections.
+function getSrcset(base, ext) {
+    const isMobile = window.innerWidth < 769;
+    const poorConnection = navigator.connection && (navigator.connection.saveData || ['slow-2g','2g','3g'].includes(navigator.connection.effectiveType));
+    if (isMobile || poorConnection) {
+        return `images/gallery/${base}_low.webp 480w, images/gallery/${base}_medium.webp 768w`;
+    }
+    return `images/gallery/${base}_low.webp 480w, images/gallery/${base}_medium.webp 768w, images/gallery/${base}_${ext}.webp 2000w`;
+}
+
+document.querySelectorAll('picture source[srcset]').forEach(source => {
+    const srcset = source.getAttribute('srcset');
+    const fullMatch = srcset.match(/images\/gallery\/(.+?)_(?:full|normal)\.webp/);
+    if (!fullMatch) return;
+    const parts = fullMatch[1].split('_');
+    const ext = srcset.includes('_normal.webp') ? 'normal' : 'full';
+    const base = fullMatch[1];
+    source.setAttribute('srcset', getSrcset(base, ext));
+});
