@@ -30,3 +30,23 @@ window.addEventListener('scroll', () =>
     scrollBtn.classList.toggle('visible', window.scrollY > 300);
 });
 
+
+// Dark mode toggle button logic.
+function applyTheme(theme)
+{
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+}
+
+function toggleTheme()
+{
+    const current = document.documentElement.getAttribute('data-theme');
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+}
+
+document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
+
+// Load saved theme on page load
+const saved = localStorage.getItem('theme');
+if (saved) applyTheme(saved);

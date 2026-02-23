@@ -215,6 +215,8 @@ footer p
 .mobile-nav
 {
     display: none;
+    gap: 0.5rem;
+    align-items: center;
 }
 
 
@@ -271,6 +273,24 @@ section.dark
 /* ---------------------- */
 /*  ANCHOR - Buttons      */
 /* ---------------------- */
+.theme-toggle-btn
+{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-icon
+{
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: var(--icon-filter);
+}
+
 .submit-btn
 {
     align-self: center;
