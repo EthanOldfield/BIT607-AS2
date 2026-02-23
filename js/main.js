@@ -19,3 +19,13 @@ document.addEventListener('click', (e) => {
 window.addEventListener('scroll', () => {
     menu.classList.add('hidden');
 });
+
+
+// Send-to-top button logic.
+const scrollBtn = document.getElementById('scroll-top-btn');
+
+window.addEventListener('scroll', () =>
+{
+    // Once the window is past 300px, show the scroll-to-top button.
+    scrollBtn.classList.toggle('visible', window.scrollY > 300);
+});

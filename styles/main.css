@@ -839,10 +839,52 @@ img.placeholder-image
 }
 
 /* ---------------------- */
+/*  ANCHOR - Send-to-top  */
+/* ---------------------- */
+.scroll-top-wrapper
+{
+    position: sticky;
+    bottom: 0;
+    height: 0;
+    display: flex;
+    align-items: flex-end;
+    pointer-events: none;
+}
+
+.scroll-top-btn
+{
+    display: none;
+    pointer-events: all;
+
+    margin-right: 2rem;
+    margin-left: auto;
+    margin-bottom: 2rem;
+
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+
+    background-color: #1f2937;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* ---------------------- */
 /*  ANCHOR - Mobile       */
 /* ---------------------- */
 @media (max-width: 768px)
 {
+    .scroll-top-btn.visible
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .header-title
     {
         font-size: 1.5rem;
