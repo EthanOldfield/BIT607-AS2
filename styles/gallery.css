@@ -18,4 +18,20 @@
 .carousel-slide {
     flex-shrink: 0;
     width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
 }
+
+.carousel-slide-body {
+    padding: 1rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.carousel-slide-body h3 { margin: 0; }
+.carousel-slide-body p { font-size: 0.9rem; margin: 0; }
