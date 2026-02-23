@@ -348,10 +348,11 @@ a.button:hover
     opacity: 0.9;
 }
 
-a.button.dark:hover
+a.button.dark
 {
     background-color: var(--bg-dark);
-    opacity: 0.85;
+    color: var(--text-dark-bg);
+    border: 1px solid transparent;
 }
 
 
