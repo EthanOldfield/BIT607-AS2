@@ -257,6 +257,12 @@ a.button.dark:hover
     flex-direction: column;
 }
 
+.service-card.clickable
+{
+    position: relative;
+    cursor: pointer;
+}
+
 section.dark .service-card
 {
     background-color: #ffffff;
@@ -808,6 +814,28 @@ img.placeholder-image
     border-radius: 0px;
     font-size: 1rem;
     color: #1f2937;
+}
+
+.click-hint
+{
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-top: 0.5rem;
+}
+
+.card-click-hint
+{
+    display: none;
+}
+
+.service-card.clickable .card-click-hint
+{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0.75rem;
+    font-size: 1.5rem;
+    color: #9ca3af;
 }
 
 /* ---------------------- */
