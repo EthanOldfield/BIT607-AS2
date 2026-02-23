@@ -8,6 +8,13 @@ const addonPrices = {
     'addon-massage': { name: 'Massage', price: 20 }
 };
 
+const packagePrices = {
+    'haircut': { name: 'Haircut', price: 25 },
+    'spa':     { name: 'Spa', price: 30 },
+    'brushing':{ name: 'Brushing', price: 20 },
+    'full':    { name: 'Full', price: 50 }
+};
+
 function getBasePrice(age)
 {
     if (age <= 3) return 30;
@@ -21,6 +28,7 @@ function updateSummary()
     // Age + service type label
     const age = parseFloat(document.getElementById('age').value);
     const basePrice = isNaN(age) ? 0 : getBasePrice(age);
+    const packageType = document.getElementById('package-type').value;
 
     let ageLabel = '—';
     if (!isNaN(age))
@@ -35,6 +43,10 @@ function updateSummary()
     const medicalCost = (medical && medical.checked) ? 30 : 0;
     if (medical && medical.checked && ageLabel !== '—') ageLabel += ' + Medical';
 
+    // Summary
+    const packageCost = packagePrices[packageType]?.price || 0;
+    const packageLabel = packagePrices[packageType]?.name || '—';
+    if (ageLabel !== '—') ageLabel += ` | ${packageLabel}`;
     document.getElementById('summary-service').textContent = ageLabel;
 
     // Datetime
@@ -75,7 +87,7 @@ function updateSummary()
     document.getElementById('summary-addons').textContent = addonText;
 
     // Total
-    const total = basePrice + addonTotal + medicalCost;
+    const total = basePrice + packageCost + addonTotal + medicalCost;
     document.getElementById('summary-cost').textContent = `$${total.toFixed(2)}`;
 }
 
@@ -84,6 +96,7 @@ function updateSummary()
     document.getElementById(id).addEventListener('input', updateSummary));
 
 document.getElementById('medical').addEventListener('change', updateSummary);
+document.getElementById('package-type').addEventListener('change', updateSummary);
 
 Object.keys(addonPrices).forEach(id =>
     document.getElementById(id).addEventListener('change', updateSummary));
@@ -99,13 +112,15 @@ document.getElementById('booking-form').addEventListener('submit', function(e)
     // Collect all data
     const bookingData = {
         pet: {
-            name: document.getElementById('name').value,
+            name: document.getElementById('dog-name').value,
             age: document.getElementById('age').value,
             breed: document.getElementById('breed').value,
             medicalNeeds: document.getElementById('medical').checked,
+            package: document.getElementById('package-type').value,
             extra: document.getElementById('extra').value
         },
         owner: {
+            name: document.getElementById('client-name').value,
             dob: document.getElementById('dob').value,
             email: document.getElementById('email').value,
             phone: document.getElementById('phone').value,
