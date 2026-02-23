@@ -663,6 +663,7 @@ img.placeholder-image
 {
     width: 50%;
     border-right: 1px solid #e5e7eb;
+
     padding-left: 3rem;
     padding-right: 3rem;
 }
@@ -692,6 +693,16 @@ img.placeholder-image
 {
     flex: 1;
     height: 1.75rem;
+    width: 100%;
+}
+
+.booking-field select
+{
+    height: 1.75rem;
+    width: 100%;
+
+    padding-left: 0.5rem;
+    font-size: 1rem;
 }
 
 .booking-field.stacked
@@ -715,7 +726,7 @@ img.placeholder-image
 .booking-field.stacked textarea
 {
     width: 100%;
-    height: 9rem;
+    height: 7rem;
     resize: vertical;
 }
 
@@ -786,9 +797,9 @@ img.placeholder-image
 
 .appointment-date-input
 {
-    flex: 1;
-
     min-height: 8.9rem;
+    min-width: 100%;
+    max-width: 100%;
 
     padding: 0 1rem;
     border: 1px solid #d1d5db;
@@ -870,7 +881,7 @@ img.placeholder-image
         cursor: pointer;
     }
 
-    h1, h2, p
+    h1, h2, h3, p, .image-credit
     {
         text-align: center;
     }
@@ -878,6 +889,11 @@ img.placeholder-image
     h1
     {
         font-size: 2rem;
+    }
+
+    .center-text-mobile
+    {
+        text-align: center;
     }
 
     footer
@@ -922,14 +938,33 @@ img.placeholder-image
         width: 100%;
         border-right: none;
         border-bottom: 1px solid #e5e7eb;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .booking-group:first-child
+    {
+        padding-top: 0;
     }
 
     .booking-group:last-child
     {
         border-bottom: none;
         padding-bottom: 0;
+    }
+
+    .appointment-date-input
+    {
+        min-height: 6.9rem;
+    }
+}
+
+/* ---------------------- */
+/*  ANCHOR - Desktop      */
+/* ---------------------- */
+@media (min-width: 769px)
+{
+    .mobile-margin
+    {
+        margin-bottom: 0 !important;
     }
 }

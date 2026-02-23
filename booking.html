@@ -102,7 +102,7 @@
                     <div class="card-grid">
                         <div class="booking-card">
                             <div class="booking-group">
-                                <h3>Pet Information:</h3>
+                                <h3 class="quarter-margin">Pet Information:</h3>
 
                                 <div class="booking-field">
                                     <label for="dog-name">Name:</label>
@@ -131,6 +131,19 @@
                                     <input type="checkbox" id="medical" name="medical"/>
                                 </div>
 
+                                <div class="booking-field">
+                                    <label for="package-type" class="label-wide">Package:</label>
+                                    <select id="package-type" name="package-type" required>
+                                        <option value="" disabled selected>Select a type</option>
+                                        <option value="haircut">Haircut - $20</option>
+                                        <option value="spa">Spa - $20</option>
+                                        <option value="brushing">Brushing - $20</option>
+                                        <option value="full">Full $20</option>
+                                    </select>
+                                </div>
+
+                                <br>
+
                                 <div class="booking-field stacked">
                                     <label for="extra">Additional Information:</label>
                                     <textarea id="extra" name="extra" maxlength="250"></textarea>
@@ -138,7 +151,7 @@
                             </div>
 
                             <div class="booking-group">
-                                <h3>Your Information:</h3>
+                                <h3 class="quarter-margin">Your Information:</h3>
 
                                 <div class="booking-field">
                                     <label for="client-name">Name:</label>
@@ -161,6 +174,8 @@
                                         onkeydown="return ['Backspace','Tab','ArrowLeft','ArrowRight','+','Space'].includes(event.key) || /[0-9]/.test(event.key)"/>
                                 </div>
 
+                                <br>
+
                                 <div class="booking-field stacked">
                                     <label for="datetime">Appointment Date & Time:</label>
                                     <input type="datetime-local" id="datetime" class="appointment-date-input" required/>
@@ -169,7 +184,7 @@
                         </div>
 
                         <div class="booking-card vertical">
-                            <h3>Add-on Options:</h3>
+                            <h3 class="quarter-margin">Add-on Options:</h3>
 
                             <!-- Grid of Cards-->
                             <div class="card-grid minimal-grid half-margin">
@@ -199,11 +214,11 @@
                                 </div>
                             </div>
 
-                            <h3>Booking Details:</h3>
+                            <h3 class="quarter-margin">Booking Details:</h3>
 
-                            <p>Service Type: <span id="summary-service">—</span></p>
-                            <p>Appointment Details: <span id="summary-appointment">—</span></p>
-                            <p>Add-ons: <span id="summary-addons">No add-ons</span></p>
+                            <p class="quarter-margin mobile-margin">Service Type: <span id="summary-service">—</span></p>
+                            <p class="quarter-margin mobile-margin">Appointment Details: <span id="summary-appointment">—</span></p>
+                            <p class="quarter-margin mobile-margin">Add-ons: <span id="summary-addons">No add-ons</span></p>
                             <p class="half-margin">Total Cost: <span id="summary-cost">$0</span></p>
 
                             <button type="submit" class="button dark submit-btn">Book Appointment</button>
