@@ -26,11 +26,32 @@ workImages.forEach(img => {
     track.appendChild(slide);
 });
 
+// Dot markers for mobile views.
+const dotsEl = document.querySelector('.carousel-dots');
+
+function buildDots() {
+    dotsEl.innerHTML = '';
+    for (let i = 0; i < workImages.length; i++) {
+        const d = document.createElement('button');
+        d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        d.addEventListener('click', () => goTo(i));
+        dotsEl.appendChild(d);
+    }
+}
+
+function updateDots() {
+    dotsEl.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+    });
+}
+
 // Card sliding logic.
 function getSlideWidth() {
     const gap = parseFloat(getComputedStyle(track).gap);
     return document.querySelector('.carousel-slide').offsetWidth + gap;
 }
+
+buildDots();
 
 function goTo(index) {
     const max = document.querySelectorAll('.carousel-slide').length - getVisible();
@@ -38,6 +59,7 @@ function goTo(index) {
     track.style.transform = `translateX(-${current * getSlideWidth()}px)`;
     prev.disabled = current === 0;
     next.disabled = current >= max;
+    updateDots();
 }
 
 function getVisible() {

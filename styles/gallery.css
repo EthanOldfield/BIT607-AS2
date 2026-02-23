@@ -68,8 +68,40 @@
 .carousel-arrow:disabled { opacity: 0.3; cursor: default; }
 
 
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.carousel-dot {
+    border-radius: 50%;
+    background-color: var(--border-light);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    width: 0.45rem;
+    height: 0.45rem;
+}
+
+.carousel-dot.active {
+    background-color: var(--accent);
+    width: 0.7rem;
+    height: 0.7rem;
+}
+
+
 @media (min-width: 769px) {
     .carousel-slide {
         width: calc((100% - 3rem) / 3);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-arrow {
+        display: none;
     }
 }
