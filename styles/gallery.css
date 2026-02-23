@@ -1,0 +1,21 @@
+.carousel-outer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-track-wrapper {
+    overflow: hidden;
+    flex: 1;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.carousel-slide {
+    flex-shrink: 0;
+    width: 100%;
+}
