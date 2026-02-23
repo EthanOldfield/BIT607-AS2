@@ -30,7 +30,3 @@ window.addEventListener('scroll', () =>
     scrollBtn.classList.toggle('visible', window.scrollY > 300);
 });
 
-if (window.matchMedia('(prefers-color-scheme: dark)').matches)
-{
-    document.documentElement.setAttribute('data-theme', 'dark');
-}

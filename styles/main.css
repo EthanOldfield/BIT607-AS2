@@ -4,13 +4,14 @@
 :root
 {
     /* Backgrounds */
-    --bg-primary:       #ffffff;
-    --bg-secondary:     #f9fafb;
-    --bg-dark:          #1f2937;
-    --bg-gap:           #000000;
-    --bg-input:         #f3f4f6;
-    --bg-button-hover:  #f7f4f4;
-    --bg-icon-holder:   #f0f2f3;
+    --bg-primary:         #ffffff;
+    --bg-secondary:       #f9fafb;
+    --bg-dark:            #1f2937;
+    --bg-gap:             #000000;
+    --bg-input:           #f3f4f6;
+    --bg-button-light:    #ffffff;
+    --bg-button-hover:    #f7f4f4;
+    --bg-icon-holder:     #f0f2f3;
 
     /* Placeholder (images not yet loaded) */
     --placeholder-bg:     #cccccc;
@@ -22,6 +23,7 @@
     --text-muted:     #9ca3af;
     --text-credit:    #666666;
     --text-dark-bg:   #ffffff;
+    --map-visited: #6b5ea8;
 
     /* Borders */
     --border:       #e5e7eb;
@@ -44,17 +46,18 @@
 [data-theme="dark"]
 {
     /* Backgrounds */
-    --bg-primary:       #1a1a2e;
-    --bg-secondary:     #13131f;
-    --bg-dark:          #0d0d16;
-    --bg-gap:           #080810;
-    --bg-input:         #252538;
-    --bg-button-hover:  #2e2e48;
-    --bg-icon-holder:   #252538;
+    --bg-primary:         #1e1f35;
+    --bg-secondary:       #191a2e;
+    --bg-dark:            #19192c;
+    --bg-gap:             #0a0a14;
+    --bg-input:           #252540;
+    --bg-button-light:    #252540;
+    --bg-button-hover:    #2e2f50;
+    --bg-icon-holder:     #252540;
 
     /* Placeholder */
-    --placeholder-bg:     #252538;
-    --placeholder-border: #3a3a58;
+    --placeholder-bg:     #252540;
+    --placeholder-border: #3a3c6e;
 
     /* Text */
     --text-primary:   #f0f0f5;
@@ -62,17 +65,35 @@
     --text-muted:     #707088;
     --text-credit:    #707088;
     --text-dark-bg:   #f0f0f5;
+    --link-visited: #9d8ec4;
 
     /* Borders */
-    --border:       #2a2a42;
-    --border-light: #3a3a58;
+    --border:       #2a2b45;
+    --border-light: #3a3c6e;
 
     /* Accent */
-    --accent: #c0c0d8;
+    --accent: #d8d8f0;
 
     --icon-filter: invert(1) opacity(0.85);
 }
 
+[data-theme="dark"] .booking-field input,
+[data-theme="dark"] .booking-field select,
+[data-theme="dark"] .booking-field textarea
+{
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-light);
+}
+
+[data-theme="dark"] .appointment-date-input
+{
+    background-color: var(--bg-input);
+}
+
+[data-theme="dark"] a.button.dark
+{
+    border: 1px solid var(--border-light);
+}
 
 /* ---------------------- */
 /*  ANCHOR - Reset        */
@@ -122,6 +143,16 @@ p
 {
     font-size: 1.2rem;
     color: var(--text-secondary);
+}
+
+.map-link
+{
+    text-decoration: none;
+}
+
+.map-link:visited
+{
+    color: var(--map-visited);
 }
 
 
@@ -277,7 +308,7 @@ a.button
     font-size: 1rem;
     white-space: nowrap;
 
-    background-color: var(--bg-primary);
+    background-color: var(--bg-button-light);
     color: var(--text-primary);
     border: 1px solid var(--border-light);
 
@@ -288,7 +319,7 @@ a.button.dark
 {
     background-color: var(--bg-dark);
     color: var(--text-dark-bg);
-    border: 1px solid var(--border-light);
+    border: none;
 }
 
 a.button:hover
@@ -300,6 +331,7 @@ a.button:hover
 a.button.dark:hover
 {
     background-color: var(--bg-dark);
+    opacity: 0.85;
 }
 
 
@@ -577,7 +609,6 @@ img.placeholder-image
     height: 60%;
     object-fit: contain;
     transform: translateY(0.1rem);
-    filter: var(--icon-filter);
 }
 
 
@@ -805,6 +836,13 @@ img.placeholder-image
     color: var(--text-primary);
 }
 
+.booking-field input,
+.booking-field select,
+.booking-field textarea
+{
+    color: var(--text-primary);
+}
+
 .booking-field input
 {
     flex: 1;
@@ -923,6 +961,7 @@ img.placeholder-image
     border-radius: 0px;
     font-size: 1rem;
     color: var(--text-primary);
+    background-color: var(--bg-input);
 }
 
 
