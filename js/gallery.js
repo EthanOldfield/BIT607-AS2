@@ -33,9 +33,18 @@ function getSlideWidth() {
 }
 
 function goTo(index) {
-    current = index;
+    const max = document.querySelectorAll('.carousel-slide').length - getVisible();
+    current = Math.max(0, Math.min(index, max));
     track.style.transform = `translateX(-${current * getSlideWidth()}px)`;
+    prev.disabled = current === 0;
+    next.disabled = current >= max;
 }
+
+function getVisible() {
+    return window.innerWidth >= 769 ? 3 : 1;
+}
+
+goTo(0);
 
 next.addEventListener('click', () => goTo(current + 1));
 prev.addEventListener('click', () => goTo(current - 1));
