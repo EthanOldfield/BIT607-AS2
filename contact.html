@@ -10,6 +10,7 @@
     <link rel="Icon" type="image/x-icon" href="/">
 
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/booking.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -46,32 +47,153 @@
 
     <!-- Core Page Content -->
     <main>
-        <!-- Welcome Section (introduction and initial image) -->
-        <section class="dark">
-            <div class="section-inner center-hero">
-                <h1 class="center-text">Contact Us</h1>
-                <p class="center-text header-margin">Make sure to view our services first!</P>
 
-                <div class="button-group">
-                    <a href="services.html" class="button dark">Services</a>
-                    <a href="contact.html" class="button">Contact Us</a>
+        <!-- Contact Form Section -->
+         <section class="dark">
+            <div class="section-inner">
+                <h1 class="center-text header-margin">Contact Us</h1>
+
+                <!-- Grid of Cards-->
+                <form id="boooking-form">
+                    <div class="card-grid">
+                        <div class="booking-card">
+                            <div class="booking-group">
+                                <h3 class="quarter-margin">Who are you?</h3>
+
+                                <div class="booking-field">
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="name" required minlength="2"/>
+                                </div>
+
+                                <div class="booking-field">
+                                    <label for="email">Email:</label>
+                                    <input type="text" id="email" name="email" required minlength="4"/>
+                                </div>
+
+                                <div class="booking-field">
+                                    <label for="phone">Phone:</label>
+                                    <input type="text" id="phone" name="phone" required minlength="7"
+                                        onkeydown="return ['Backspace','Tab','ArrowLeft','ArrowRight','+','Space'].includes(event.key) || /[0-9]/.test(event.key)"/>
+                                </div>
+
+                                <br>
+
+                                <div class="booking-field stacked">
+                                    <label for="extra"><strong>What can we help you with?</strong></label>
+                                    <textarea id="extra" name="extra" maxlength="250"></textarea>
+                                </div>
+
+                                <button type="submit" class="button dark submit-btn">Book Appointment</button>
+                            </div>
+
+                            <div class="booking-group">
+                                <h3>Our Contact Information:</h3>
+
+                                <div class="contact-card">
+                                    <div class="contact-card-icon-holder">
+                                        <img src="images/icons/phone.svg" alt="" class="contact-card-icon">
+                                    </div>
+
+                                    <div class="contact-card-text">
+                                        <span class="contact-card-title">Main Clinic</span>
+                                        <span class="contact-card-detail">12B Dogwash Drive, Suite 123<br>Hamilton, New Zealand</span>
+                                    </div>
+                                </div>
+
+                                <div class="contact-card">
+                                    <div class="contact-card-icon-holder">
+                                        <img src="images/icons/map_pin.svg" alt="" class="contact-card-icon">
+                                    </div>
+
+                                    <div class="contact-card-text">
+                                        <span class="contact-card-title">Email</span>
+                                        <span class="contact-card-detail">contact@snazzypaws.nz</span>
+                                    </div>
+                                </div>
+
+                                <div class="contact-card">
+                                    <div class="contact-card-icon-holder">
+                                        <img src="images/icons/map_pin.svg" alt="" class="contact-card-icon">
+                                    </div>
+
+                                    <div class="contact-card-text half-margin">
+                                        <span class="contact-card-title">Phone</span>
+                                        <span class="contact-card-detail">+64 022-123-4567</span>
+                                    </div>
+                                </div>
+
+                                <h3>Disclaimer:</h3>
+                                <p>Please remain...</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+         </section>
+
+         <!-- Open Hours + Salon Location Section -->
+        <section>
+            <div class="split">
+                <!-- Open Hours Card -->
+                <div class="card">
+                    <h2>Opening Hours</h2>
+                    <p>Please check our schedule before visiting.</p>
+
+                    <!-- Status Indicator -->
+                     <div class="status-container">
+                        <div class="status-bullet"></div>
+
+                        <div class="status-card open">
+                            <span>Open Now</span>
+                        </div>
+                     </div>
+
+                     <!-- Salon Hours List -->
+                    <div class="hours-list">
+                        <div class="hours-row">
+                            <span class="day">Monday-Friday</span>
+                            <span class="time">08:00 AM - 06:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Saturday</span>
+                            <span class="time">09:00 AM - 02:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Sunday</span>
+                            <span class="time">Closed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Salon Location Card -->
+                <div class="card">
+                    <div>
+                        <h2>Location</h2>
+                        <p>Enquire in person for personalized assistance.</p>
+                    </div>
+
+                    <div class="half-margin">
+                        <a href="https://maps.app.goo.gl/GqcBo66sTEDNV7tZ8" style="text-decoration: none;">
+                            <strong>View on Google Maps</strong>
+
+                            <!-- SVG gives me more control over the look of the element, unlike IMG -->
+                            <svg class="external-link-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                       </a>
+
+                        <div class="embedded-map">
+                            <iframe
+                                src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=hamilton&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                                loading="lazy"
+                                allowfullscreen
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-
-        <!-- Booking Form Section -->
-         <section class="dark">
-            <div class="section-inner">
-                <!-- Grid of Cards-->
-                <div class="card-grid">
-                    <div class="service-card">
-                    </div>
-
-                    <div class="service-card">
-                    </div>
-                </div>
-            </div>
-         </section>
     </main>
 
     <!-- Footer Bar -->
@@ -83,5 +205,6 @@
 
     <!-- Link JS -->
     <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
 </body>
 </html>
