@@ -101,6 +101,22 @@ document.getElementById('package-type').addEventListener('change', updateSummary
 Object.keys(addonPrices).forEach(id =>
     document.getElementById(id).addEventListener('change', updateSummary));
 
+
+// Load URL information (anything selected from the service page's cards)
+const params = new URLSearchParams(window.location.search);
+
+const package = params.get('package');
+if (package && document.getElementById('package-type'))
+{
+    document.getElementById('package-type').value = package;
+}
+
+const addon = params.get('addon');
+if (addon && document.getElementById(addon))
+{
+    document.getElementById(addon).checked = true;
+}
+
 updateSummary();
 
 
