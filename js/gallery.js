@@ -13,14 +13,10 @@ const workImages = [
 ];
 
 const teamImages = [
-    { title: 'Sarah', desc: 'Lead Groomer', base: 'dog_sunglasses', ext: 'full' },
-    { title: 'James', desc: 'Senior Stylist', base: 'dog_haircut', ext: 'full' },
-    { title: 'Mia', desc: 'Spa Specialist', base: 'dog_wash', ext: 'full' },
-    { title: 'Tom', desc: 'De-shed Expert', base: 'dog_brushing', ext: 'full' },
-    { title: 'Sarah', desc: 'Lead Groomer', base: 'dog_sunglasses', ext: 'full' },
-    { title: 'James', desc: 'Senior Stylist', base: 'dog_haircut', ext: 'full' },
-    { title: 'Mia', desc: 'Spa Specialist', base: 'dog_wash', ext: 'full' },
-    { title: 'Tom', desc: 'De-shed Expert', base: 'dog_brushing', ext: 'full' }
+    { title: 'James', desc: 'Senior Stylist', base: '/staff/stylist-ai', ext: 'full' },
+    { title: 'Tom', desc: 'Veterinarian', base: '/staff/veterinarian-ai', ext: 'full' },
+    { title: 'James', desc: 'Senior Stylist', base: '/staff/stylist-ai', ext: 'full' },
+    { title: 'Carl', desc: 'Receptionist', base: '/staff/receptionist-ai', ext: 'full' }
 ];
 
 const salonImages = [
