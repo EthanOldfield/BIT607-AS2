@@ -20,9 +20,11 @@ const teamImages = [
 ];
 
 const salonImages = [
-    { title: 'Bathing Stations', desc: 'Purpose-built tubs with warm water and gentle pet-safe shampoos.', base: 'dog_wash', ext: 'full' },
-    { title: 'Grooming Tables', desc: 'Non-slip, height-adjustable tables for safe and comfortable grooming.', base: 'dog_haircut', ext: 'full' },
-    { title: 'Relaxation Area', desc: 'A calm space where pets can settle in before their appointment.', base: 'dog_brushing', ext: 'full' }
+    { title: 'Exterior', desc: 'Our salon viewed from outside.', base: '/salon/exterior', ext: 'full' },
+    { title: 'Office', desc: 'Our work area.', base: '/salon/office', ext: 'full' },
+    { title: 'Exterior Ground View', desc: 'Our salon viewed from the footpath.', base: '/salon/exterior-two', ext: 'full' },
+    { title: 'Footpath', desc: 'The footpath outside our salon.', base: '/salon/footpath', ext: 'full' },
+    { title: 'Street Sign', desc: 'The street we reside in.', base: '/salon/street-sign', ext: 'full' }
 ];
 
 function buildSlide(img)
