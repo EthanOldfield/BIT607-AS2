@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/booking.css">
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <header>
@@ -33,7 +35,7 @@
             <a href="gallery.html" class="button">Gallery</a>
             <a href="services.html" class="button">View Services</a>
             <a href="contact.html" class="button">Get Help</a>
-            <a  href="booking.html" class="button dark">Book Now</a>
+            <a href="booking.html" class="button dark">Book Now</a>
         </div>
 
         <!-- Mobile dropdown button -->
@@ -47,7 +49,7 @@
                 <a href="gallery.html" class="button">Gallery</a>
                 <a href="services.html" class="button">View Services</a>
                 <a href="contact.html" class="button">Get Help</a>
-                <a  href="booking.html" class="button dark">Book Now</a>
+                <a href="booking.html" class="button dark">Book Now</a>
             </div>
         </div>
     </header>
@@ -56,7 +58,7 @@
     <main>
 
         <!-- Contact Form Section -->
-         <section class="dark">
+        <section class="dark">
             <div class="section-inner">
                 <h1 class="center-text header-margin">Contact Us</h1>
 
@@ -69,25 +71,26 @@
 
                                 <div class="booking-field">
                                     <label for="client-name">Name:</label>
-                                    <input type="text" id="client-name" name="client-name" required minlength="2"/>
+                                    <input type="text" id="client-name" name="client-name" required minlength="2" />
                                 </div>
 
                                 <div class="booking-field">
                                     <label for="email">Email:</label>
-                                    <input type="text" id="email" name="email" required minlength="4"/>
+                                    <input type="text" id="email" name="email" required minlength="4" />
                                 </div>
 
                                 <div class="booking-field">
                                     <label for="phone">Phone:</label>
                                     <input type="text" id="phone" name="phone" required minlength="7"
-                                        onkeydown="return ['Backspace','Tab','ArrowLeft','ArrowRight','+','Space'].includes(event.key) || /[0-9]/.test(event.key)"/>
+                                        onkeydown="return ['Backspace','Tab','ArrowLeft','ArrowRight','+','Space'].includes(event.key) || /[0-9]/.test(event.key)" />
                                 </div>
 
                                 <br>
 
                                 <div class="booking-field stacked">
                                     <label for="extra"><strong>What can we help you with?</strong></label>
-                                    <textarea id="extra" name="extra" minlength="30" maxlength="250" required></textarea>
+                                    <textarea id="extra" name="extra" minlength="30" maxlength="250"
+                                        required></textarea>
                                 </div>
 
                                 <button type="submit" class="button dark submit-btn">Book Appointment</button>
@@ -103,7 +106,8 @@
 
                                     <div class="contact-card-text">
                                         <span class="contact-card-title">Main Clinic</span>
-                                        <span class="contact-card-detail">12B Dogwash Drive, Suite 123<br>Hamilton, New Zealand</span>
+                                        <span class="contact-card-detail">12B Dogwash Drive, Suite 123<br>Hamilton, New
+                                            Zealand</span>
                                     </div>
                                 </div>
 
@@ -139,9 +143,9 @@
                     </div>
                 </form>
             </div>
-         </section>
+        </section>
 
-         <!-- Open Hours + Salon Location Section -->
+        <!-- Open Hours + Salon Location Section -->
         <section>
             <div class="split">
                 <!-- Open Hours Card -->
@@ -150,15 +154,15 @@
                     <p>Please check our schedule before visiting.</p>
 
                     <!-- Status Indicator -->
-                     <div class="status-container">
+                    <div class="status-container">
                         <div class="status-bullet"></div>
 
                         <div class="status-card open">
                             <span>Open Now</span>
                         </div>
-                     </div>
+                    </div>
 
-                     <!-- Salon Hours List -->
+                    <!-- Salon Hours List -->
                     <div class="hours-list">
                         <div class="hours-row">
                             <span class="day">Monday-Friday</span>
@@ -187,17 +191,17 @@
                             <strong>View on Google Maps</strong>
 
                             <!-- SVG gives me more control over the look of the element, unlike IMG -->
-                            <svg class="external-link-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <svg class="external-link-icon" viewBox="0 0 12 12" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                       </a>
+                        </a>
 
                         <div class="embedded-map">
                             <iframe
                                 src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=hamilton&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                                loading="lazy"
-                                allowfullscreen
-                                referrerpolicy="no-referrer-when-downgrade">
+                                loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
                         </div>
                     </div>
@@ -216,4 +220,5 @@
     <!-- Link JS -->
     <script src="js/main.js"></script>
 </body>
+
 </html>

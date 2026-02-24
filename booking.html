@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/booking.css">
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <header>
@@ -33,7 +35,7 @@
             <a href="gallery.html" class="button">Gallery</a>
             <a href="services.html" class="button">View Services</a>
             <a href="contact.html" class="button">Get Help</a>
-            <a  href="booking.html" class="button dark">Book Now</a>
+            <a href="booking.html" class="button dark">Book Now</a>
         </div>
 
         <!-- Mobile dropdown button -->
@@ -47,7 +49,7 @@
                 <a href="gallery.html" class="button">Gallery</a>
                 <a href="services.html" class="button">View Services</a>
                 <a href="contact.html" class="button">Get Help</a>
-                <a  href="booking.html" class="button dark">Book Now</a>
+                <a href="booking.html" class="button dark">Book Now</a>
             </div>
         </div>
     </header>
@@ -100,7 +102,7 @@
         </section>
 
         <!-- Booking Form Section -->
-         <section class="dark">
+        <section class="dark">
             <div class="section-inner">
                 <h2 class="center-text header-margin">Booking Form</h2>
 
@@ -113,29 +115,31 @@
 
                                 <div class="booking-field">
                                     <label for="dog-name">Name:</label>
-                                    <input type="text" id="dog-name" name="dog-name" required minlength="2"/>
+                                    <input type="text" id="dog-name" name="dog-name" required minlength="2" />
                                 </div>
 
                                 <div class="booking-field">
                                     <label for="age">Age:</label>
                                     <div class="number-input">
-                                        <button type="button" class="number-btn" onclick="this.parentNode.querySelector('input').stepDown(); updateSummary()">−</button>
+                                        <button type="button" class="number-btn"
+                                            onclick="this.parentNode.querySelector('input').stepDown(); updateSummary()">−</button>
 
                                         <input type="number" id="age" required min="1" max="40" value="1"
-                                            onkeydown="return ['Backspace','Tab','ArrowLeft','ArrowRight'].includes(event.key) || /[0-9]/.test(event.key)"/>
+                                            onkeydown="return ['Backspace','Tab','ArrowLeft','ArrowRight'].includes(event.key) || /[0-9]/.test(event.key)" />
 
-                                        <button type="button" class="number-btn" onclick="this.parentNode.querySelector('input').stepUp(); updateSummary()">+</button>
+                                        <button type="button" class="number-btn"
+                                            onclick="this.parentNode.querySelector('input').stepUp(); updateSummary()">+</button>
                                     </div>
                                 </div>
 
                                 <div class="booking-field">
                                     <label for="breed">Breed:</label>
-                                    <input type="text" id="breed" name="breed" required minlength="2"/>
+                                    <input type="text" id="breed" name="breed" required minlength="2" />
                                 </div>
 
                                 <div class="booking-field">
                                     <label for="medical" class="label-wider">Medical Needs (+$30):</label>
-                                    <input type="checkbox" id="medical" name="medical"/>
+                                    <input type="checkbox" id="medical" name="medical" />
                                 </div>
 
                                 <div class="booking-field">
@@ -162,70 +166,86 @@
 
                                 <div class="booking-field">
                                     <label for="client-name">Name:</label>
-                                    <input type="text" id="client-name" name="client-name" required minlength="2"/>
+                                    <input type="text" id="client-name" name="client-name" required minlength="2" />
                                 </div>
 
                                 <div class="booking-field">
                                     <label for="dob" class="label-wide">Date of Birth:</label>
-                                    <input type="date" id="dob" required/>
+                                    <input type="date" id="dob" required />
                                 </div>
 
                                 <div class="booking-field">
                                     <label for="email">Email:</label>
-                                    <input type="text" id="email" name="email" required minlength="4"/>
+                                    <input type="text" id="email" name="email" required minlength="4" />
                                 </div>
 
                                 <div class="booking-field">
                                     <label for="phone">Phone:</label>
                                     <input type="text" id="phone" name="phone" required minlength="7"
-                                        onkeydown="return ['Backspace','Tab','ArrowLeft','ArrowRight','+','Space'].includes(event.key) || /[0-9]/.test(event.key)"/>
+                                        onkeydown="return ['Backspace','Tab','ArrowLeft','ArrowRight','+','Space'].includes(event.key) || /[0-9]/.test(event.key)" />
                                 </div>
 
                                 <br>
 
                                 <div class="booking-field stacked">
                                     <label for="datetime">Appointment Date & Time:</label>
-                                    <input type="datetime-local" id="datetime" class="appointment-date-input" required/>
+                                    <input type="datetime-local" id="datetime" class="appointment-date-input"
+                                        required />
                                 </div>
                             </div>
                         </div>
 
                         <div class="booking-card vertical">
-                            <h3 id="addons"  class="quarter-margin">Add-on Options:</h3>
+                            <h3 id="addons" class="quarter-margin">Add-on Options:</h3>
 
                             <!-- Grid of Cards-->
                             <div class="card-grid minimal-grid half-margin">
-                                <div class="service-card minimal addon-card" onclick="this.querySelector('.addon-checkbox').click()">
-                                    <input type="checkbox" id="addon-flea" class="addon-checkbox" onclick="event.stopPropagation()"/>
+                                <div class="service-card minimal addon-card"
+                                    onclick="this.querySelector('.addon-checkbox').click()">
+                                    <input type="checkbox" id="addon-flea" class="addon-checkbox"
+                                        onclick="event.stopPropagation()" />
                                     <p>$20 - Flea & Tick</p>
                                 </div>
-                                <div class="service-card minimal addon-card" onclick="this.querySelector('.addon-checkbox').click()">
-                                    <input type="checkbox" id="addon-deshed" class="addon-checkbox" onclick="event.stopPropagation()"/>
+                                <div class="service-card minimal addon-card"
+                                    onclick="this.querySelector('.addon-checkbox').click()">
+                                    <input type="checkbox" id="addon-deshed" class="addon-checkbox"
+                                        onclick="event.stopPropagation()" />
                                     <p>$20 - De-shedding</p>
                                 </div>
-                                <div class="service-card minimal addon-card" onclick="this.querySelector('.addon-checkbox').click()">
-                                    <input type="checkbox" id="addon-ear" class="addon-checkbox" onclick="event.stopPropagation()"/>
+                                <div class="service-card minimal addon-card"
+                                    onclick="this.querySelector('.addon-checkbox').click()">
+                                    <input type="checkbox" id="addon-ear" class="addon-checkbox"
+                                        onclick="event.stopPropagation()" />
                                     <p>$20 - Ear Cleaning</p>
                                 </div>
-                                <div class="service-card minimal addon-card" onclick="this.querySelector('.addon-checkbox').click()">
-                                    <input type="checkbox" id="addon-nail" class="addon-checkbox" onclick="event.stopPropagation()"/>
+                                <div class="service-card minimal addon-card"
+                                    onclick="this.querySelector('.addon-checkbox').click()">
+                                    <input type="checkbox" id="addon-nail" class="addon-checkbox"
+                                        onclick="event.stopPropagation()" />
                                     <p>$20 - Nail Trimming</p>
                                 </div>
-                                <div class="service-card minimal addon-card" onclick="this.querySelector('.addon-checkbox').click()">
-                                    <input type="checkbox" id="addon-teeth" class="addon-checkbox" onclick="event.stopPropagation()"/>
+                                <div class="service-card minimal addon-card"
+                                    onclick="this.querySelector('.addon-checkbox').click()">
+                                    <input type="checkbox" id="addon-teeth" class="addon-checkbox"
+                                        onclick="event.stopPropagation()" />
                                     <p>$20 - Teeth Brushing</p>
                                 </div>
-                                <div class="service-card minimal addon-card" onclick="this.querySelector('.addon-checkbox').click()">
-                                    <input type="checkbox" id="addon-massage" class="addon-checkbox" onclick="event.stopPropagation()"/>
+                                <div class="service-card minimal addon-card"
+                                    onclick="this.querySelector('.addon-checkbox').click()">
+                                    <input type="checkbox" id="addon-massage" class="addon-checkbox"
+                                        onclick="event.stopPropagation()" />
                                     <p>$20 - Massage</p>
                                 </div>
                             </div>
 
                             <h3 class="quarter-margin">Booking Details:</h3>
 
-                            <p class="quarter-margin mobile-margin">Service Type: <span id="summary-service">—</span></p>
-                            <p class="quarter-margin mobile-margin">Appointment Details: <span id="summary-appointment">—</span></p>
-                            <p class="quarter-margin mobile-margin">Add-ons: <span id="summary-addons">No add-ons</span></p>
+                            <p class="quarter-margin mobile-margin">Service Type: <span id="summary-service">—</span>
+                            </p>
+                            <p class="quarter-margin mobile-margin">Appointment Details: <span
+                                    id="summary-appointment">—</span></p>
+                            <p class="quarter-margin mobile-margin">Add-ons: <span id="summary-addons">No add-ons</span>
+                            </p>
                             <p class="half-margin">Total Cost: <span id="summary-cost">$0</span></p>
 
                             <button type="submit" class="button dark submit-btn">Book Appointment</button>
@@ -233,7 +253,7 @@
                     </div>
                 </form>
             </div>
-         </section>
+        </section>
     </main>
 
     <!-- Footer Bar -->
@@ -247,4 +267,5 @@
     <script src="js/main.js"></script>
     <script src="js/booking.js"></script>
 </body>
+
 </html>
