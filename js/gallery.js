@@ -33,7 +33,7 @@ function buildSlide(img)
 {
     return `
         <picture>
-            <source srcset="images/gallery/${img.base}_low.webp 480w, images/gallery/${img.base}_medium.webp 768w, images/gallery/${img.base}_${img.ext}.webp 2000w" type="image/webp">
+            <source srcset="${getSrcset(img.base, img.ext, true)}" type="image/webp">
             <img src="images/gallery/${img.base}_${img.ext}.webp" class="placeholder-image" alt="${img.title}" loading="lazy">
         </picture>
         <div class="carousel-slide-body">

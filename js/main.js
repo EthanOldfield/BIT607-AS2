@@ -98,8 +98,9 @@ updateOpenStatus();
 
 
 // Limit image quality on mobile or poor connections.
-function getSrcset(base, ext)
+function getSrcset(base, ext, allowFull = false)
 {
+	// Get device condition.
 	const isMobile = window.innerWidth < 769;
 	const poorConnection =
 		navigator.connection &&
@@ -112,11 +113,23 @@ function getSrcset(base, ext)
 		return `images/gallery/${base}_low.webp 480w`;
 	}
 
+	// If full-res is allowed and it's a mobile device.
+	if (allowFull && isMobile)
+	{
+        return `images/gallery/${base}_low.webp 480w, images/gallery/${base}_medium.webp 768w`;
+	}
+
 	// If the devices is a phone.
 	if (isMobile)
 	{
 		// Phone displays don't need the level of detail medium quality has.
 		return `images/gallery/${base}_low.webp 480w`;
+	}
+
+	// If it's on the gallery page and is a wide-screen device (only that page will set this value to true).
+	if (allowFull)
+	{
+		return `images/gallery/${base}_low.webp 480w, images/gallery/${base}_medium.webp 768w, images/gallery/${base}_${ext}.webp 2000w`;
 	}
 
 	// Final option, computers typically but this can include tablets or other wide screens.
@@ -131,7 +144,6 @@ document.querySelectorAll("picture source[srcset]").forEach((source) =>
 	);
 
 	if (!fullMatch) return;
-	const parts = fullMatch[1].split("_");
 	const ext = srcset.includes("_normal.webp") ? "normal" : "full";
 	const base = fullMatch[1];
 
