@@ -10,9 +10,9 @@ const addonPrices = {
 
 const packagePrices = {
     'haircut': { name: 'Haircut', price: 25 },
-    'spa':     { name: 'Spa', price: 30 },
-    'brushing':{ name: 'Brushing', price: 20 },
-    'full':    { name: 'Full', price: 50 }
+    'spa': { name: 'Spa', price: 30 },
+    'brushing': { name: 'Brushing', price: 20 },
+    'full': { name: 'Full', price: 50 }
 };
 
 function getBasePrice(age)
@@ -121,7 +121,7 @@ updateSummary();
 
 
 // Submit form
-document.getElementById('booking-form').addEventListener('submit', function(e)
+document.getElementById('booking-form').addEventListener('submit', function (e)
 {
     e.preventDefault();
 

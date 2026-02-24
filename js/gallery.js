@@ -29,7 +29,8 @@ const salonImages = [
     { title: 'Relaxation Area', desc: 'A calm space where pets can settle in before their appointment.', base: 'dog_brushing', ext: 'full' }
 ];
 
-function buildSlide(img) {
+function buildSlide(img)
+{
     return `
         <picture>
             <source srcset="images/gallery/${img.base}_low.webp 480w, images/gallery/${img.base}_medium.webp 768w, images/gallery/${img.base}_${img.ext}.webp 2000w" type="image/webp">
@@ -41,7 +42,8 @@ function buildSlide(img) {
         </div>`;
 }
 
-workImages.forEach(img => {
+workImages.forEach(img =>
+{
     const slide = document.createElement('div');
     slide.className = 'carousel-slide';
     slide.innerHTML = buildSlide(img);
@@ -51,9 +53,11 @@ workImages.forEach(img => {
 // Dot markers for mobile views.
 const dotsEl = document.querySelector('.carousel-dots');
 
-function buildDots() {
+function buildDots()
+{
     dotsEl.innerHTML = '';
-    for (let i = 0; i < workImages.length; i++) {
+    for (let i = 0; i < workImages.length; i++)
+    {
         const d = document.createElement('button');
         d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
         d.addEventListener('click', () => goTo(i));
@@ -61,21 +65,25 @@ function buildDots() {
     }
 }
 
-function updateDots() {
-    dotsEl.querySelectorAll('.carousel-dot').forEach((d, i) => {
+function updateDots()
+{
+    dotsEl.querySelectorAll('.carousel-dot').forEach((d, i) =>
+    {
         d.classList.toggle('active', i === current);
     });
 }
 
 // Card sliding logic.
-function getSlideWidth() {
+function getSlideWidth()
+{
     const gap = parseFloat(getComputedStyle(track).gap);
     return document.querySelector('.carousel-slide').offsetWidth + gap;
 }
 
 buildDots();
 
-function goTo(index) {
+function goTo(index)
+{
     const max = document.querySelectorAll('.carousel-slide').length - getVisible();
     current = Math.max(0, Math.min(index, max));
     track.style.transform = `translateX(-${current * getSlideWidth()}px)`;
@@ -84,7 +92,8 @@ function goTo(index) {
     updateDots();
 }
 
-function getVisible() {
+function getVisible()
+{
     return window.innerWidth >= 769 ? 3 : 1;
 }
 
@@ -96,7 +105,8 @@ prev.addEventListener('click', () => goTo(current - 1));
 // Drag / swipe logic.
 let dragStartX = 0, dragDeltaX = 0, isDragging = false;
 
-wrapper.addEventListener('mousedown', e => {
+wrapper.addEventListener('mousedown', e =>
+{
     e.preventDefault();
     dragStartX = e.clientX;
     dragDeltaX = 0;
@@ -105,13 +115,15 @@ wrapper.addEventListener('mousedown', e => {
     wrapper.classList.add('dragging');
 });
 
-window.addEventListener('mousemove', e => {
+window.addEventListener('mousemove', e =>
+{
     if (!isDragging) return;
     dragDeltaX = e.clientX - dragStartX;
     track.style.transform = `translateX(-${current * getSlideWidth() - dragDeltaX}px)`;
 });
 
-window.addEventListener('mouseup', () => {
+window.addEventListener('mouseup', () =>
+{
     if (!isDragging) return;
     isDragging = false;
     track.classList.remove('no-transition');
@@ -120,20 +132,23 @@ window.addEventListener('mouseup', () => {
     dragDeltaX < -threshold ? goTo(current + 1) : dragDeltaX > threshold ? goTo(current - 1) : goTo(current);
 });
 
-wrapper.addEventListener('touchstart', e => {
+wrapper.addEventListener('touchstart', e =>
+{
     dragStartX = e.touches[0].clientX;
     dragDeltaX = 0;
     isDragging = true;
     track.classList.add('no-transition');
 }, { passive: true });
 
-wrapper.addEventListener('touchmove', e => {
+wrapper.addEventListener('touchmove', e =>
+{
     if (!isDragging) return;
     dragDeltaX = e.touches[0].clientX - dragStartX;
     track.style.transform = `translateX(-${current * getSlideWidth() - dragDeltaX}px)`;
 }, { passive: true });
 
-wrapper.addEventListener('touchend', () => {
+wrapper.addEventListener('touchend', () =>
+{
     if (!isDragging) return;
     isDragging = false;
     track.classList.remove('no-transition');
@@ -142,11 +157,13 @@ wrapper.addEventListener('touchend', () => {
 });
 
 // Team and salon section rendering.
-function buildGrid(containerId, images) {
+function buildGrid(containerId, images)
+{
     const container = document.getElementById(containerId);
     const grid = document.createElement('div');
     grid.className = 'card-grid';
-    images.forEach(img => {
+    images.forEach(img =>
+    {
         const card = document.createElement('div');
         card.className = 'service-card';
         card.innerHTML = buildSlide(img);
@@ -155,7 +172,8 @@ function buildGrid(containerId, images) {
     container.appendChild(grid);
 }
 
-function buildCarousel(containerId, images) {
+function buildCarousel(containerId, images)
+{
     const container = document.getElementById(containerId);
     container.innerHTML = `
         <div class="carousel-outer">
@@ -174,29 +192,35 @@ function buildCarousel(containerId, images) {
     const cDotsEl = container.querySelector('.carousel-dots');
     let cCurrent = 0;
 
-    images.forEach(img => {
+    images.forEach(img =>
+    {
         const slide = document.createElement('div');
         slide.className = 'carousel-slide';
         slide.innerHTML = buildSlide(img);
         cTrack.appendChild(slide);
     });
 
-    function cGetSlideWidth() {
+    function cGetSlideWidth()
+    {
         const gap = parseFloat(getComputedStyle(cTrack).gap);
         return cTrack.querySelector('.carousel-slide').offsetWidth + gap;
     }
 
-    function cGetVisible() {
+    function cGetVisible()
+    {
         return window.innerWidth >= 769 ? 3 : 1;
     }
 
-    function cUpdateDots() {
-        cDotsEl.querySelectorAll('.carousel-dot').forEach((d, i) => {
+    function cUpdateDots()
+    {
+        cDotsEl.querySelectorAll('.carousel-dot').forEach((d, i) =>
+        {
             d.classList.toggle('active', i === cCurrent);
         });
     }
 
-    function cGoTo(index) {
+    function cGoTo(index)
+    {
         const max = images.length - cGetVisible();
         cCurrent = Math.max(0, Math.min(index, max));
         cTrack.style.transform = `translateX(-${cCurrent * cGetSlideWidth()}px)`;
@@ -205,9 +229,11 @@ function buildCarousel(containerId, images) {
         cUpdateDots();
     }
 
-    function cBuildDots() {
+    function cBuildDots()
+    {
         cDotsEl.innerHTML = '';
-        for (let i = 0; i < images.length; i++) {
+        for (let i = 0; i < images.length; i++)
+        {
             const d = document.createElement('button');
             d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
             d.addEventListener('click', () => cGoTo(i));
@@ -232,13 +258,16 @@ function buildCarousel(containerId, images) {
     requestAnimationFrame(() => cGoTo(0));
 }
 
-function initSection(containerId, images, threshold) {
+function initSection(containerId, images, threshold)
+{
     const isMobile = window.innerWidth < 769;
     const container = document.getElementById(containerId);
     container.innerHTML = '';
-    if (isMobile || images.length >= threshold) {
+    if (isMobile || images.length >= threshold)
+    {
         buildCarousel(containerId, images);
-    } else {
+    } else
+    {
         buildGrid(containerId, images);
     }
 }
@@ -246,7 +275,8 @@ function initSection(containerId, images, threshold) {
 initSection('team-section', teamImages, Infinity);
 initSection('salon-section', salonImages, 4);
 
-window.addEventListener('resize', () => {
+window.addEventListener('resize', () =>
+{
     initSection('team-section', teamImages, Infinity);
     initSection('salon-section', salonImages, 4);
 });
