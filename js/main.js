@@ -116,7 +116,7 @@ function getSrcset(base, ext, allowFull = false)
 	// If full-res is allowed and it's a mobile device.
 	if (allowFull && isMobile)
 	{
-        return `images/gallery/${base}_low.webp 480w, images/gallery/${base}_medium.webp 768w`;
+		return `images/gallery/${base}_low.webp 480w, images/gallery/${base}_medium.webp 768w`;
 	}
 
 	// If the devices is a phone.
