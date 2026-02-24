@@ -15,7 +15,7 @@ const workImages = [
 const teamImages = [
     { title: 'James', desc: 'Senior Stylist', base: '/staff/stylist-ai', ext: 'full' },
     { title: 'Tom', desc: 'Veterinarian', base: '/staff/veterinarian-ai', ext: 'full' },
-    { title: 'James', desc: 'Senior Stylist', base: '/staff/stylist-ai', ext: 'full' },
+    { title: 'Robert', desc: 'Elderly Dog Handler', base: '/staff/elderly-handler-ai', ext: 'full' },
     { title: 'Carl', desc: 'Receptionist', base: '/staff/receptionist-ai', ext: 'full' }
 ];
 
