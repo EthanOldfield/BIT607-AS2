@@ -66,28 +66,28 @@
                     <div class="card-grid">
                         <div class="booking-card">
                             <div class="booking-group">
-                                <h3 class="quarter-margin">Your Details:</h3>
+                                <h2 class="quarter-margin">Your Details:</h2>
 
                                 <div class="booking-field">
                                     <label for="client-name">Name:</label>
-                                    <input type="text" id="client-name" name="client-name" required minlength="2" />
+                                    <input type="text" id="client-name" name="client-name" required minlength="2">
                                 </div>
 
                                 <div class="booking-field">
                                     <label for="email">Email:</label>
-                                    <input type="text" id="email" name="email" required minlength="4" />
+                                    <input type="text" id="email" name="email" required minlength="4">
                                 </div>
 
                                 <div class="booking-field">
                                     <label for="phone">Phone:</label>
                                     <input type="text" id="phone" name="phone" required minlength="7"
-                                        onkeydown="return ['Backspace','Tab','ArrowLeft','ArrowRight','+','Space'].includes(event.key) || /[0-9]/.test(event.key)" />
+                                        onkeydown="return ['Backspace','Tab','ArrowLeft','ArrowRight','+','Space'].includes(event.key) || /[0-9]/.test(event.key)">
                                 </div>
 
                                 <br>
 
                                 <div class="booking-field stacked">
-                                    <label for="extra"><strong>What can we help you with?</strong></label>
+                                    <h3>What can we help you with?</h3>
                                     <textarea id="extra" name="extra" minlength="30" maxlength="250"
                                         required></textarea>
                                 </div>
