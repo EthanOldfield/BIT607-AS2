@@ -93,7 +93,7 @@ buildDots();
 // Method to move the carousel to a specific slide index.
 function goTo(index)
 {
-    const max = document.querySelectorAll('.carousel-slide').length - getVisible();
+    const max = workImages.length - getVisible();
     current = Math.max(0, Math.min(index, max));
     track.style.transform = `translateX(-${current * getSlideWidth()}px)`;
     prev.disabled = current === 0;
