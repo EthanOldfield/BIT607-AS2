@@ -293,7 +293,7 @@ function buildCarousel(containerId, images)
     requestAnimationFrame(() => cGoTo(0));
 }
 
-// Method to decide whether to show a grid or carousel depending on screen size and image count.
+// Method to build galleries and decide whether to show a grid or carousel depending on screen size and image count.
 function initSection(containerId, images, threshold)
 {
     const isMobile = window.innerWidth < 769;
